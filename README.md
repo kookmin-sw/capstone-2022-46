@@ -1,9 +1,11 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7234459&assignment_repo_type=AssignmentRepo)
-# 미정
+# 2022 캡스톤 디자인 46팀
 
-readme
+- 팀원
+  - 20163165 최민혁
+  - 20163168 최원준
 
-## 팀소개 및 페이지를 꾸며주세요.
+##
 
 - 프로젝트 소개
   - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
@@ -13,7 +15,7 @@ readme
   - 프로젝트 소개 및 팀원 소개
   - index.md 예시보고 수정.
 
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
+- GitHub Pages 리파지토리 Settings > Options > GitHub Pages
   - Source를 marster branch
   - Theme Chooser에서 태마선택
   - 수정후 팀페이지 확인하여 점검.
