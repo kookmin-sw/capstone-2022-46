@@ -1,8 +1,15 @@
-## Tall Tails
+# 2D 종스크롤 슈팅게임
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+단순하지만 큰 중독성!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+적들을 피해가며, 동화 주인공들을 성장시켜 자신만의 동화를 완성해보세요!
+
+
+# 2022 캡스톤 디자인 46팀
+
+- 팀원
+  - 20163165 최민혁
+  - 20163168 최원준
 
 ### Markdown
 
