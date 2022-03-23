@@ -41,4 +41,21 @@ public class MovingObject : MonoBehaviour
       Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos); //다시 월드 좌표로 변환한다.
       transform.position = worldPos; //좌표를 적용한다.
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    //rigidBody가 무언가와 충돌할때 호출되는 함수 입니다.
+    //Collider2D other로 부딪힌 객체를 받아옵니다.
+    {
+        if (other.gameObject.tag.Equals("enemy"))
+        //부딪힌 객체의 태그를 비교해서 적인지 판단합니다.
+        {
+            Destroy(other.gameObject);
+            //적을 파괴합니다.
+
+            //Destroy(this.gameObject);
+            //자신을 파괴합니다.
+        }
+    }
+
+
 }
