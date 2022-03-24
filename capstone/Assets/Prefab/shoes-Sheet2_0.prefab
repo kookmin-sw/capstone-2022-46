@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3744030017563382568}
   - component: {fileID: 3744030017563382569}
   - component: {fileID: 3744030017563382574}
+  - component: {fileID: -5777200302309376501}
   m_Layer: 0
   m_Name: shoes-Sheet2_0
   m_TagString: Untagged
@@ -116,3 +117,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  DestroyYPos: 5
+--- !u!60 &-5777200302309376501
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3744030017563382575}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.99, y: 2.05275}
+    newSize: {x: 1.99, y: 2.05275}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.0161328, y: 0.13710159}
+      - {x: 1.0161328, y: 0.8288985}
+      - {x: 0.85890627, y: 1.0490156}
+      - {x: 0.41867188, y: 1.0490156}
+      - {x: -0.33601564, y: -0.083015606}
+      - {x: -0.8076953, y: -0.42891404}
+      - {x: -0.9963672, y: -0.6490312}
+      - {x: -0.9963672, y: -1.026375}
+      - {x: 0.2928906, y: -1.026375}
+      - {x: 0.6702344, y: -0.7119219}
+      - {x: 0.8903516, y: -0.61758596}

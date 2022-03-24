@@ -721,6 +721,7 @@ MonoBehaviour:
   PlayerMissile: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
   MissileLocation: {fileID: 1529048357}
   FireDelay: 0.3
+  MissileMaxPool: 10
 --- !u!1 &1112995635
 GameObject:
   m_ObjectHideFlags: 0
