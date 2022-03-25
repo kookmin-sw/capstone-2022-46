@@ -20,5 +20,18 @@ public class shoes : MonoBehaviour {
         {
           GetComponent<Collider2D>().enabled = false;
         }
+
+
+    }
+
+
+    //객체와 충돌할 경우.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+      if (collision.CompareTag("Enemy"))
+      {
+        Debug.Log("적 기체와 충돌");
+        GetComponent<Collider2D>().enabled = false;
+      }
     }
 }
