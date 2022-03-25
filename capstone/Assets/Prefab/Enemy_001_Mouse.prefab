@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8169637492296214447}
   - component: {fileID: 8169637492296214446}
   m_Layer: 0
-  m_Name: Enemy_001_mouse
+  m_Name: Enemy_001_Mouse
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adb0357527fc8b49951021cc53d5ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 2.5
+  Coin: {fileID: 0}
+  HP: 40
 --- !u!50 &8169637492296214447
 Rigidbody2D:
   serializedVersion: 4
