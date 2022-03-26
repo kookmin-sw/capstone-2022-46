@@ -6,10 +6,26 @@ public class MovingObject : MonoBehaviour
 {
     public float Speed = 3f;
 
+    //체력 정보.
+    public int HP;
+    private PlayerData playerData;
+
+    void Start()
+    {
+      playerData = this.gameObject.AddComponent<PlayerData>();
+      playerData.setHP(HP);
+    }
+
     // Update is called once per frame
     void Update()
     {
         Move();
+
+        //체력체크.
+        if(playerData.getHP() <= 0 )
+        {
+          Destroy(this.gameObject);
+        }
     }
 
     private void Move(){
@@ -42,14 +58,12 @@ public class MovingObject : MonoBehaviour
       transform.position = worldPos; //좌표를 적용한다.
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    //rigidBody가 무언가와 충돌할때 호출되는 함수 입니다.
-    //Collider2D other로 부딪힌 객체를 받아옵니다.
-    {
-        if (other.gameObject.tag.Equals("enemy"))
+    private void OnTriggerEnter2D(Collider2D other){
+        if (other.gameObject.tag == "Enemy")
         //부딪힌 객체의 태그를 비교해서 적인지 판단합니다.
         {
-            Destroy(other.gameObject);
+            Debug.Log("주인공이 적과 충돌");
+            playerData.decreaseHP(10); // 체력 10 감소.
             //적을 파괴합니다.
 
             //Destroy(this.gameObject);
