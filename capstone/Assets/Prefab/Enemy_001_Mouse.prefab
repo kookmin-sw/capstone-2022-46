@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2.5
-  Coin: {fileID: 0}
-  DestroyYPos: 0
+  Coin: {fileID: 8823030452686700451, guid: 9262a077b3ee94d48b33a87261ef4173, type: 3}
+  DestroyYPos: -5
   HP: 40
 --- !u!50 &8169637492296214447
 Rigidbody2D:

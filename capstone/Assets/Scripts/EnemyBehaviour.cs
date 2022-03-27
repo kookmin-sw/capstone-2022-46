@@ -6,7 +6,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public  float Speed = 2f;
     public GameObject Coin;
-    //public float DestroyYPos; // 미사일이 사라지는 지점
+    public float DestroyYPos; // 미사일이 사라지는 지점
 
     //체력 정보.
     public int HP;
@@ -28,13 +28,14 @@ public class EnemyBehaviour : MonoBehaviour
         if(enemyData.getHP() <= 0 )
         {
           Destroy(this.gameObject);
+          Instantiate(Coin, this.gameObject.transform.position, Quaternion.identity);
         }
 
         //미사일이 한계위치 넘어서면 제거.
-      //  if(transform.position.y >= DestroyYPos)
-      //  {
-      //    Destroy(this.gameObject);
-      //  }
+        if(transform.position.y <= DestroyYPos)
+        {
+          Destroy(this.gameObject);
+        }
     }
 
     void moveControl()
