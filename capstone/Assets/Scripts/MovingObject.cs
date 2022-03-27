@@ -7,13 +7,14 @@ public class MovingObject : MonoBehaviour
     public float Speed = 3f;
 
     //체력 정보.
-    public int HP;
+    public float HP;
     private PlayerData playerData;
 
     void Start()
     {
-      playerData = this.gameObject.AddComponent<PlayerData>();
-      playerData.setHP(HP);
+      //playerData = this.gameObject.AddComponent<PlayerData>();
+      //playerData.setHP(HP);
+      PlayerData.HP = HP;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class MovingObject : MonoBehaviour
         Move();
 
         //체력체크.
-        if(playerData.getHP() <= 0 )
+        if(PlayerData.HP <= 0 )
         {
           Destroy(this.gameObject);
         }
@@ -62,8 +63,9 @@ public class MovingObject : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         //부딪힌 객체의 태그를 비교해서 적인지 판단합니다.
         {
-            Debug.Log("주인공이 적과 충돌");
-            playerData.decreaseHP(10); // 체력 10 감소.
+            //Debug.Log("주인공이 적과 충돌");
+            //playerData.decreaseHP(10); // 체력 10 감소.
+            PlayerData.HP -= 10;
             //적을 파괴합니다.
 
             //Destroy(this.gameObject);

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 52011051}
   - component: {fileID: 52011053}
   - component: {fileID: 52011052}
+  - component: {fileID: 52011054}
   m_Layer: 5
   m_Name: BarMask
   m_TagString: Untagged
@@ -198,6 +199,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52011050}
   m_CullTransparentMesh: 1
+--- !u!114 &52011054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52011050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0de3652df533245897b2078aba987d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP_MAX: 100
+  lerpSpeed: 3
+  hp_Text: {fileID: 363938923}
 --- !u!1 &142356485
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8960890943106198212, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
+      propertyPath: HP
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8960890943106198213, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
       propertyPath: m_Name
       value: player
