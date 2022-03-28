@@ -23,10 +23,7 @@ public class MovingObject : MonoBehaviour
         Move();
 
         //체력체크.
-        if(PlayerData.HP <= 0 )
-        {
-          Destroy(this.gameObject);
-        }
+        
     }
 
     private void Move(){
@@ -66,7 +63,11 @@ public class MovingObject : MonoBehaviour
             //Debug.Log("주인공이 적과 충돌");
             //playerData.decreaseHP(10); // 체력 10 감소.
             PlayerData.HP -= 10;
-            //적을 파괴합니다.
+
+            if (PlayerData.HP <= 0)
+            {
+                Destroy(this.gameObject);
+            }
 
             //Destroy(this.gameObject);
             //자신을 파괴합니다.

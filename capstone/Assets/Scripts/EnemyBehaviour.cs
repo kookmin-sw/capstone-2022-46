@@ -4,54 +4,107 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public  float Speed = 2f;
-    public GameObject Coin;
-    public float DestroyYPos; // 미사일이 사라지는 지점
+    public string enemyName;
+    public int enemyScore;
+    public int coinDrop;
+    public int ringDrop;
+    public int ticketDrop;
+    public float maxHP;
+    public float health;
+    public float Speed;
+    public float dmg;
 
-    //체력 정보.
-    public int HP;
-    private EnemyData enemyData;
+    public float maxShotDelay;
+    public float curShotDelay;
+
+    public GameObject bullet;
+    public GameObject itemCoin;
+    public GameObject itemRing;
+    public GameObject itemTicket;
+    public GameObject player;
+    public ObjectManager objectManager;
+
+    SpriteRenderer spriteRenderer;
+
+
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-      //enemyData = new EnemyData(HP);
-      enemyData = this.gameObject.AddComponent<EnemyData>();
-      enemyData.setHP(HP);
+        spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
     }
-
+    private void OnEnable()
+    {
+        switch (enemyName)
+        {
+            case "enemy001":
+                health = 15;
+                break;
+            case "enemy002":
+                health = 40;
+                break;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         moveControl();
-
-        //체력체크.
-        if(enemyData.getHP() <= 0 )
-        {
-          Destroy(this.gameObject);
-          Instantiate(Coin, this.gameObject.transform.position, Quaternion.identity);
-        }
-
-        //미사일이 한계위치 넘어서면 제거.
-        if(transform.position.y <= DestroyYPos)
-        {
-          Destroy(this.gameObject);
-        }
     }
-
     void moveControl()
     {
         float distanceY = Speed * Time.deltaTime;
         this.gameObject.transform.Translate(0, -1 * distanceY, 0);
     }
 
-    private void OnTriggerEnter2D(Collider2D col) //���� �浹
+    private void OnTriggerEnter2D(Collider2D col) //적과 충돌
     {
-        if (col.gameObject.tag == "Bullet" )
+        Player playerLogic = player.GetComponent<Player>();
+        if (col.gameObject.tag == "Player")
         {
-            enemyData.decreaseHP(10); // 체력 10 감소.
-            Debug.Log("적이 미사일과 충돌");
-            //Instantiate(Coin, transform.position, transform.rotation);
-            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
+        }
+        else if (col.gameObject.tag == "Bullet")
+        {
+            onHit(playerLogic.dmg);
+        }
+
+    }
+    private void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
+    }
+
+
+    void onHit(float dmg)
+    {
+        if (health <= 0)
+            return;
+
+        health -= dmg;
+        //데미지 받은 스프라이트(색깔만 점멸해도 됨)
+
+        if (health <= 0)
+        {
+            Player playerLogic = player.GetComponent<Player>();
+            playerLogic.score += enemyScore;
+            int ran = Random.Range(0, 100);//퍼센테이지로 표기
+            if (ran < ticketDrop)
+            {
+                GameObject itemTicket = objectManager.MakeObj("itemTicket");
+                itemTicket.transform.position = transform.position;
+            }
+            else if (ran < ticketDrop + ringDrop)
+            {
+                GameObject itemRing = objectManager.MakeObj("itemRing");
+                itemRing.transform.position = transform.position;
+            }
+            else
+            {
+                GameObject itemCoin = objectManager.MakeObj("itemCoin");
+                itemCoin.transform.position = transform.position;
+            }
+
+            gameObject.SetActive(false);
         }
     }
 }

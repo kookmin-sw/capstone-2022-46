@@ -117,10 +117,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adb0357527fc8b49951021cc53d5ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyName: 
+  enemyScore: 0
+  coinDrop: 100
+  ringDrop: 0
+  ticketDrop: 0
+  maxHP: 40
+  health: 0
   Speed: 2
-  Coin: {fileID: 0}
-  DestroyYPos: -5
-  HP: 0
+  dmg: 0
+  maxShotDelay: 0
+  curShotDelay: 0
+  bullet: {fileID: 0}
+  itemCoin: {fileID: 0}
+  itemRing: {fileID: 0}
+  itemTicket: {fileID: 0}
+  player: {fileID: 0}
+  objectManager: {fileID: 0}
 --- !u!70 &9060786725829897341
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

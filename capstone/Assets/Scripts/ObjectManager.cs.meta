@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b14e33924f386de409221d303405ec3e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemy001Prefab: {instanceID: 0}
+  - enemy002Prefab: {instanceID: 0}
+  - boss_sisters_Prefab: {instanceID: 0}
+  - itemCoinPrefab: {instanceID: 0}
+  - itemRingPrefab: {instanceID: 0}
+  - itemTicketPrefab: {instanceID: 0}
+  - bulletPlayerPrefab: {instanceID: 0}
+  - bullet_sisters_Prefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
