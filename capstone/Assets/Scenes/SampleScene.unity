@@ -1432,12 +1432,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683766111}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c450897102394b4383b22c09dfd1d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  dmg: 0
   HP: 100
 --- !u!114 &1683766115
 MonoBehaviour:
@@ -1452,7 +1453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  Speed: 3
+  Speed: 5
   dmg: 10
   maxPower: 2
   power: 1

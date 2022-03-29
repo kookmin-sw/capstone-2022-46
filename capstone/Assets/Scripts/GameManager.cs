@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public string[] enemyObjs;
     public Transform[] spawnPoints;
-    
+
 
     public float maxSpawnDelay;
     public float curSpawnDelay;
@@ -32,9 +32,10 @@ public class GameManager : MonoBehaviour
             curSpawnDelay = 0;
         }
         Player playerLogic = player.GetComponent<Player>();
-        scoreText.text = string.Format("{0:n0}", playerLogic.score);
+        //에러나서 잠깐지움.
+      //  scoreText.text = string.Format("{0:n0}", playerLogic.score);
     }
-    
+
     void SpawnEnemy()
     {
         int ranEnemy = Random.Range(0, 2);
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         enemyLogic.player = player;
         enemyLogic.objectManager = objectManager;
     }
-    
+
     public void RespawnPlayer()
     {
         player.transform.position = Vector3.down * 3.5f;

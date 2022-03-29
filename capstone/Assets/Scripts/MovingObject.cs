@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovingObject : MonoBehaviour
 {
     public float Speed = 3f;
+    public float dmg;
 
     //체력 정보.
     public float HP;
@@ -23,7 +24,7 @@ public class MovingObject : MonoBehaviour
         Move();
 
         //체력체크.
-        
+
     }
 
     private void Move(){

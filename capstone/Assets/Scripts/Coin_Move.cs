@@ -15,7 +15,7 @@ public class Coin_Move : MonoBehaviour
 
         if(transform.position.y <= DestroyYPos)
           {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
           }
 
     }
@@ -31,7 +31,7 @@ public class Coin_Move : MonoBehaviour
         if (col.gameObject.tag == "Player" )
         {
             GoldState.instance.AddScore(50);
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 

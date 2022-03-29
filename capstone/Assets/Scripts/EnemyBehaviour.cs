@@ -24,7 +24,10 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject player;
     public ObjectManager objectManager;
 
+    public Sprite[] sprites;
     SpriteRenderer spriteRenderer;
+
+    public const float DestroyYPos = -5; // 미사일이 사라지는 지점
 
 
 
@@ -33,7 +36,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
     }
-    private void OnEnable()
+
+
+    void OnEnable()
     {
         switch (enemyName)
         {
@@ -49,6 +54,11 @@ public class EnemyBehaviour : MonoBehaviour
     void Update()
     {
         moveControl();
+
+        if(transform.position.y <= DestroyYPos)
+          {
+              gameObject.SetActive(false);
+          }
     }
     void moveControl()
     {
@@ -82,6 +92,9 @@ public class EnemyBehaviour : MonoBehaviour
 
         health -= dmg;
         //데미지 받은 스프라이트(색깔만 점멸해도 됨)
+        spriteRenderer.sprite = sprites[1];
+        Invoke("ReturnSprite", 0.1f);
+        ////////////
 
         if (health <= 0)
         {
@@ -103,8 +116,14 @@ public class EnemyBehaviour : MonoBehaviour
                 GameObject itemCoin = objectManager.MakeObj("itemCoin");
                 itemCoin.transform.position = transform.position;
             }
-
+            Debug.Log("적 체력 000000");
             gameObject.SetActive(false);
         }
     }
+
+    void ReturnSprite(){
+      spriteRenderer.sprite = sprites[0];
+    }
+
+
 }

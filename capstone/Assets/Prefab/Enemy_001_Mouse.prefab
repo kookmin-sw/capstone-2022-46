@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adb0357527fc8b49951021cc53d5ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: enemy001
   enemyScore: 0
   coinDrop: 100
   ringDrop: 0
@@ -114,6 +114,10 @@ MonoBehaviour:
   itemTicket: {fileID: 0}
   player: {fileID: 0}
   objectManager: {fileID: 0}
+  sprites:
+  - {fileID: -7037991341391351084, guid: 7254ded3054f48043883aae078d215ed, type: 3}
+  - {fileID: 5084608276489939853, guid: 7254ded3054f48043883aae078d215ed, type: 3}
+  DestroyYPos: -5
 --- !u!50 &8169637492296214447
 Rigidbody2D:
   serializedVersion: 4

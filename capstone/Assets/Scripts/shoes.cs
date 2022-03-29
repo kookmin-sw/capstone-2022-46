@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class shoes : MonoBehaviour {
     public float moveSpeed = 0.45f;
+    public float DestroyYPos; // 미사일이 사라지는 지점
+
     void Start () {
 
     }
@@ -11,6 +13,12 @@ public class shoes : MonoBehaviour {
         float moveY = moveSpeed * Time.deltaTime;
         //이동할 거리를 지정
         transform.Translate(0, moveY, 0);
+
+
+        if(transform.position.y >= DestroyYPos)
+          {
+              gameObject.SetActive(false);
+          }
     }
 
 
