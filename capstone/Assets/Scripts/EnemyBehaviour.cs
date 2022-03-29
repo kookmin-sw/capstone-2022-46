@@ -27,10 +27,6 @@ public class EnemyBehaviour : MonoBehaviour
     public Sprite[] sprites;
     SpriteRenderer spriteRenderer;
 
-    public const float DestroyYPos = -5; // 미사일이 사라지는 지점
-
-
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -55,10 +51,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         moveControl();
 
-        if(transform.position.y <= DestroyYPos)
-          {
-              gameObject.SetActive(false);
-          }
+        
     }
     void moveControl()
     {
