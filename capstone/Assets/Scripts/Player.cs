@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float health;
+    public static float health = 100;
     public float Speed = 3f;
     public float dmg;
     public int maxPower;
@@ -22,19 +22,19 @@ public class Player : MonoBehaviour
     public GameManager gameManager;
     public ObjectManager objectManager;
     public bool isHit;
-    
+
     void Update()
     {
         Move();
         curShotDelay += Time.deltaTime;
         Fire();
     }
-    
+
     void Fire()
     {
         if (!Input.GetKey(KeyCode.Space))
              return;
-        
+
 
         if (curShotDelay < maxShotDelay)
             return;
@@ -54,13 +54,35 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-
+/*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyBehaviour enemy = enemyAtk.GetComponent<EnemyBehaviour>();
             health -= enemy.dmg;
+            Debug.Log("적과 플레이어 충돌");
+            enemy.gameObject.SetActive(false);
+            if(health <= 0)
+            {
+                GameManager manager = gameManager.GetComponent<GameManager>();
+                manager.GameOver();
+            }
+
+        }
+
+    }
+*/
+
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            EnemyBehaviour enemy = col.gameObject.GetComponent<EnemyBehaviour>();
+            health -= enemy.dmg;
+            Debug.Log("적과 플레이어 충돌");
+            //enemyAtk.gameObject.SetActive(false);
             if(health <= 0)
             {
                 GameManager manager = gameManager.GetComponent<GameManager>();
@@ -69,7 +91,7 @@ public class Player : MonoBehaviour
             //gameObject.SetActive(false);
 
         }
-           
+
     }
 
     private void Move(){

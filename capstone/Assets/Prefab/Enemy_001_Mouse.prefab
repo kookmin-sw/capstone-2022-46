@@ -105,7 +105,7 @@ MonoBehaviour:
   maxHP: 15
   health: 0
   Speed: 2.5
-  dmg: 0
+  dmg: 10
   maxShotDelay: 0
   curShotDelay: 0
   bullet: {fileID: 0}
@@ -117,7 +117,6 @@ MonoBehaviour:
   sprites:
   - {fileID: -7037991341391351084, guid: 7254ded3054f48043883aae078d215ed, type: 3}
   - {fileID: 5084608276489939853, guid: 7254ded3054f48043883aae078d215ed, type: 3}
-  DestroyYPos: -5
 --- !u!50 &8169637492296214447
 Rigidbody2D:
   serializedVersion: 4

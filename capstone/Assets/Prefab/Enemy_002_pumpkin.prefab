@@ -125,7 +125,7 @@ MonoBehaviour:
   maxHP: 40
   health: 0
   Speed: 2
-  dmg: 0
+  dmg: 10
   maxShotDelay: 0
   curShotDelay: 0
   bullet: {fileID: 0}
