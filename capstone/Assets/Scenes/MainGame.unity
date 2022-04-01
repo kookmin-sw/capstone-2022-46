@@ -208,12 +208,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 52011050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a0de3652df533245897b2078aba987d, type: 3}
+  m_Script: {fileID: 11500000, guid: 08110b84ddb0b554cbc110fa5478b71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP_MAX: 100
-  hp_bar: {fileID: 0}
-  lerpSpeed: 3
+  lerpSpeed: 1
   hp_Text: {fileID: 363938923}
 --- !u!1 &142356485
 GameObject:
@@ -1437,7 +1435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546cbc9c05b52dc49ab614096036dfe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   Speed: 5
   dmg: 10
   maxPower: 2
