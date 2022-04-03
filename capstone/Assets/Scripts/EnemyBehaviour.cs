@@ -53,21 +53,16 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case "bossSisters":
                 health = 100;
-                Invoke("Stop()", 2);
+                Invoke("Stop", 2);
                 break;
         }
     }
 
     void Stop()
     {
-       // if (!gameObject.activeSelf)
-         //   return;
-
-        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
-        rigid.velocity = Vector2.zero;
-
+        Debug.Log("stop");
         Speed = 0;
-        Invoke("Think", 2);
+        Invoke("Think", 2f);
     }
     void Think()
     {
@@ -80,27 +75,32 @@ public class EnemyBehaviour : MonoBehaviour
                 FireRight();
                 break;
             case 1:
+                PunchLeft();
                 break;
         }
     }
     void FireRight()
     {
-      /*  int bulletNum = 20;
+        int bulletNum = 20;
         for(int index = 0; index < bulletNum; index++)
         {
+            Debug.Log(index);
             GameObject bullet = objectManager.MakeObj("bulletBossSisters");
-            bullet.transform.position = transform.position + Vector3.right * 2; //위치는 약간 미세조정 필요
+            bullet.transform.position = transform.position;//위치는 약간 미세조정 필요
             bullet.transform.rotation = Quaternion.identity;
 
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
-            Vector2 dirVec = new Vector2(Mathf.Sin(Mathf.PI * 2 * index / bulletNum), Mathf.Cos(Mathf.PI * 2 * index / bulletNum));
-            rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
+            Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 2 * index / 180), Mathf.Sin(Mathf.PI * 2 * index / 180));
+            rigid.AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
+
+            Vector3 rotVec = Vector3.forward * 360 * index / bulletNum + Vector3.forward * 90;
+            bullet.transform.Rotate(rotVec);
         }
         
         curPatternCount++;
 
         if(curPatternCount < maxPatternCount[patternIndex])
-            Invoke("FireRight", 0.7f); // 재시전
+            Invoke("FireRight", 0.3f); // 재시전
         else
             Invoke("Think", 3); // 다음 패턴으로
     }
@@ -112,7 +112,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(curPatternCount < maxPatternCount[patternIndex])
             Invoke("PunchLeft", 4); // 재시전
         else
-            Invoke("Think", 3); // 다음 패턴으로*/
+            Invoke("Think", 3f); // 다음 패턴으로
     }
    
     void Update()
@@ -152,7 +152,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         health -= dmg;
         //데미지 받은 스프라이트(색깔만 점멸해도 됨)
-        if(enemyName == "bossSisters")
+      /*  if(enemyName == "bossSisters")
         {
             anim.SetTrigger("OnHit"); // 보스 피격시 애니메이션 출력
         }
@@ -160,7 +160,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             spriteRenderer.sprite = sprites[1];
             Invoke("ReturnSprite", 0.1f);
-        }
+        }*/
 
         if (health <= 0)
         {

@@ -97,18 +97,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adb0357527fc8b49951021cc53d5ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: boss1
+  enemyName: bossSisters
   enemyScore: 10000
   coinDrop: 100
   ringDrop: 0
   ticketDrop: 0
-  maxHP: 10
+  maxHP: 0
   health: 0
-  Speed: 2
-  dmg: 100
+  Speed: 1.5
+  dmg: 30
   maxShotDelay: 5
   curShotDelay: 0
-  bullet: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
+  bullet: {fileID: 8823030452686700451, guid: 9262a077b3ee94d48b33a87261ef4173, type: 3}
   itemCoin: {fileID: 0}
   itemRing: {fileID: 0}
   itemTicket: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   sprites: []
   patternIndex: 0
   curPatternCount: 0
-  maxPatternCount: 0200000000000000
+  maxPatternCount: 0a00000000000000
 --- !u!50 &8135420698464237504
 Rigidbody2D:
   serializedVersion: 4

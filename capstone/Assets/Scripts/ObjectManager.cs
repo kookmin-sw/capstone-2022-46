@@ -37,7 +37,7 @@ public class ObjectManager : MonoBehaviour
         //itemTicket = new GameObject[1];
 
         bulletPlayer = new GameObject[20];
-        bulletBossSisters = new GameObject[10];
+        bulletBossSisters = new GameObject[20];
 
         Genarate();
     }
@@ -81,7 +81,7 @@ public class ObjectManager : MonoBehaviour
 
         for (int index = 0; index < bulletBossSisters.Length; index++)
         {
-            bulletBossSisters[index] = Instantiate(enemy001Prefab);
+            bulletBossSisters[index] = Instantiate(bulletSistersPrefab);
             bulletBossSisters[index].SetActive(false);
         } 
 

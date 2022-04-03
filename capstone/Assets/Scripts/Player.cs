@@ -83,15 +83,15 @@ public class Player : MonoBehaviour
             health -= enemy.dmg;
             Debug.Log("적과 플레이어 충돌");
             //enemyAtk.gameObject.SetActive(false);
-            if(health <= 0)
+            if (health <= 0)
             {
                 GameManager manager = gameManager.GetComponent<GameManager>();
                 manager.GameOver();
             }
+
             //gameObject.SetActive(false);
 
         }
-
     }
 
     private void Move(){
