@@ -6,12 +6,12 @@ public class ObjectManager : MonoBehaviour
 {
     public GameObject enemy001Prefab;
     public GameObject enemy002Prefab;
-    public GameObject boss_sisters_Prefab;
+    public GameObject bossSistersPrefab;
     public GameObject itemCoinPrefab;
     public GameObject itemRingPrefab;
     public GameObject itemTicketPrefab;
     public GameObject bulletPlayerPrefab;
-    //public GameObject bullet_sisters_Prefab;
+    public GameObject bulletSistersPrefab;
 
     GameObject[] enemy001;
     GameObject[] enemy002;
@@ -30,14 +30,14 @@ public class ObjectManager : MonoBehaviour
     {
         enemy001 = new GameObject[10];
         enemy002 = new GameObject[10];
-        //bossSisters = new GameObject[1];
+        bossSisters = new GameObject[1];
 
         itemCoin = new GameObject[10];
         itemRing = new GameObject[3];
         //itemTicket = new GameObject[1];
 
-        bulletPlayer = new GameObject[10];
-        //bulletBossSisters = new GameObject[10];
+        bulletPlayer = new GameObject[20];
+        bulletBossSisters = new GameObject[10];
 
         Genarate();
     }
@@ -54,6 +54,11 @@ public class ObjectManager : MonoBehaviour
         {
             enemy002[index] = Instantiate(enemy002Prefab);
             enemy002[index].SetActive(false);
+        }                                                               
+        for (int index = 0; index < bossSisters.Length; index++)
+        {
+            bossSisters[index] = Instantiate(bossSistersPrefab);
+            bossSisters[index].SetActive(false);
         }
 
         for (int index = 0; index < itemCoin.Length; index++)
@@ -74,11 +79,11 @@ public class ObjectManager : MonoBehaviour
             bulletPlayer[index].SetActive(false);
         }
 
-      /*  for (int index = 0; index < bulletBossSisters.Length; index++)
+        for (int index = 0; index < bulletBossSisters.Length; index++)
         {
             bulletBossSisters[index] = Instantiate(enemy001Prefab);
             bulletBossSisters[index].SetActive(false);
-        } º¸½º ÅºÈ¯ */
+        } 
 
     }
     public GameObject MakeObj(string type)
@@ -92,6 +97,9 @@ public class ObjectManager : MonoBehaviour
             case "enemy002":
                 targetPool = enemy002;
                 break;
+            case "bossSisters":
+                targetPool = bossSisters;
+                break;
             case "itemCoin":
                 targetPool = itemCoin;
                 break;
@@ -101,9 +109,9 @@ public class ObjectManager : MonoBehaviour
             case "bulletPlayer":
                 targetPool = bulletPlayer;
                 break;
-            /*case "bulletBossSisters":
+            case "bulletBossSisters":
                 targetPool = bulletBossSisters;
-                break;*/
+                break;
         }
 
         for (int index = 0; index < targetPool.Length; index++)
@@ -126,6 +134,9 @@ public class ObjectManager : MonoBehaviour
             case "enemy002":
                 targetPool = enemy002;
                 break;
+            case "bossSisters":
+                targetPool = bossSisters;
+                break;
             case "itemCoin":
                 targetPool = itemCoin;
                 break;
@@ -135,9 +146,9 @@ public class ObjectManager : MonoBehaviour
             case "bulletPlayer":
                 targetPool = bulletPlayer;
                 break;
-           /* case "bulletBossSisters":
+            case "bulletBossSisters":
                 targetPool = bulletBossSisters;
-                break;*/
+                break;
         }
         return targetPool;
     }

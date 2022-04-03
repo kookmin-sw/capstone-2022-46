@@ -26,11 +26,18 @@ public class EnemyBehaviour : MonoBehaviour
 
     public Sprite[] sprites;
     SpriteRenderer spriteRenderer;
+    Animator anim;
 
-    // Start is called before the first frame update
+    public int patternIndex;
+    public int curPatternCount;
+    public int[] maxPatternCount;
+
+    
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
+        if (enemyName == "Boss")
+            anim = GetComponent<Animator>();
     }
 
 
@@ -44,15 +51,75 @@ public class EnemyBehaviour : MonoBehaviour
             case "enemy002":
                 health = 40;
                 break;
+            case "bossSisters":
+                health = 100;
+                Invoke("Stop()", 2);
+                break;
         }
     }
-    // Update is called once per frame
+
+    void Stop()
+    {
+       // if (!gameObject.activeSelf)
+         //   return;
+
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+        rigid.velocity = Vector2.zero;
+
+        Speed = 0;
+        Invoke("Think", 2);
+    }
+    void Think()
+    {
+        patternIndex = patternIndex == 1 ? 0 : patternIndex + 1;
+        curPatternCount = 0;
+
+        switch (patternIndex)
+        {
+            case 0:
+                FireRight();
+                break;
+            case 1:
+                break;
+        }
+    }
+    void FireRight()
+    {
+      /*  int bulletNum = 20;
+        for(int index = 0; index < bulletNum; index++)
+        {
+            GameObject bullet = objectManager.MakeObj("bulletBossSisters");
+            bullet.transform.position = transform.position + Vector3.right * 2; //위치는 약간 미세조정 필요
+            bullet.transform.rotation = Quaternion.identity;
+
+            Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
+            Vector2 dirVec = new Vector2(Mathf.Sin(Mathf.PI * 2 * index / bulletNum), Mathf.Cos(Mathf.PI * 2 * index / bulletNum));
+            rigid.AddForce(dirVec.normalized * 5, ForceMode2D.Impulse);
+        }
+        
+        curPatternCount++;
+
+        if(curPatternCount < maxPatternCount[patternIndex])
+            Invoke("FireRight", 0.7f); // 재시전
+        else
+            Invoke("Think", 3); // 다음 패턴으로
+    }
+    void PunchLeft()
+    {
+        Debug.Log("왼쪽 때리기.");
+        curPatternCount++;
+        //구현 아직 안함. 스프라이트가 필요
+        if(curPatternCount < maxPatternCount[patternIndex])
+            Invoke("PunchLeft", 4); // 재시전
+        else
+            Invoke("Think", 3); // 다음 패턴으로*/
+    }
+   
     void Update()
     {
         moveControl();
-
-        
     }
+
     void moveControl()
     {
         float distanceY = Speed * Time.deltaTime;
@@ -85,15 +152,21 @@ public class EnemyBehaviour : MonoBehaviour
 
         health -= dmg;
         //데미지 받은 스프라이트(색깔만 점멸해도 됨)
-        spriteRenderer.sprite = sprites[1];
-        Invoke("ReturnSprite", 0.1f);
-        ////////////
+        if(enemyName == "bossSisters")
+        {
+            anim.SetTrigger("OnHit"); // 보스 피격시 애니메이션 출력
+        }
+        else
+        {
+            spriteRenderer.sprite = sprites[1];
+            Invoke("ReturnSprite", 0.1f);
+        }
 
         if (health <= 0)
         {
             Player playerLogic = player.GetComponent<Player>();
             playerLogic.score += enemyScore;
-            int ran = Random.Range(0, 100);//퍼센테이지로 표기
+            int ran = enemyName == "bossSisters" ? 0 : Random.Range(0, 100);//퍼센테이지로 표기
             if (ran < ticketDrop)
             {
                 GameObject itemTicket = objectManager.MakeObj("itemTicket");

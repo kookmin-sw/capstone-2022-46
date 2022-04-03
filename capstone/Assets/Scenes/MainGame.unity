@@ -682,12 +682,15 @@ MonoBehaviour:
   - {fileID: 409727200}
   - {fileID: 178402140}
   - {fileID: 1709851512}
-  maxSpawnDelay: 0.5
+  nextSpawnDelay: 0
   curSpawnDelay: 0
   player: {fileID: 1683766111}
   scoreText: {fileID: 0}
   gameOverSet: {fileID: 0}
   objectManager: {fileID: 1788788541}
+  spawnList: []
+  spawnIndex: 0
+  spawnEnd: 0
 --- !u!4 &332134195
 Transform:
   m_ObjectHideFlags: 0
@@ -1439,7 +1442,7 @@ MonoBehaviour:
   dmg: 10
   maxPower: 2
   power: 1
-  maxShotDelay: 0.5
+  maxShotDelay: 0.15
   curShotDelay: 0
   score: 0
   money: 0
@@ -1576,11 +1579,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy001Prefab: {fileID: 8169637492296214450, guid: 189d5b989422e40418bba0e6deee0b45, type: 3}
   enemy002Prefab: {fileID: 9060786725829897331, guid: edeb538ea1e73774f8b967f69b1810ee, type: 3}
-  boss_sisters_Prefab: {fileID: 0}
+  bossSistersPrefab: {fileID: 8363605380323164418, guid: fcd6f38de89fd91448e5257094fbfa42, type: 3}
   itemCoinPrefab: {fileID: 8823030452686700451, guid: 9262a077b3ee94d48b33a87261ef4173, type: 3}
   itemRingPrefab: {fileID: 6466664685848868856, guid: 7ed2999751198db4cb86739ca411ecc3, type: 3}
   itemTicketPrefab: {fileID: 4502129316254352192, guid: 6639043fbe1972f4c94fb7d254dc6b39, type: 3}
   bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
+  bulletSistersPrefab: {fileID: 3257572180766984181, guid: 1f1920d704e093e41aaa39db8656bbcc, type: 3}
 --- !u!4 &1788788542
 Transform:
   m_ObjectHideFlags: 0
