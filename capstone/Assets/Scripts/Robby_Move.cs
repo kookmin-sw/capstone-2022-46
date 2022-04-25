@@ -6,9 +6,6 @@ public class Robby_Move : MonoBehaviour
 {
     public float speed;
     private Vector3 vector;
-
-
-
     public int walkCount;
     private int currentWalkCount;
 
@@ -16,10 +13,17 @@ public class Robby_Move : MonoBehaviour
 
       private Animator animator;
 
+      // BoxCollider 컴포넌트를 가져오기 위해 선언
+    private BoxCollider2D boxCollider;
+
+    // 통과불가능한 레이어를 설정해주기 위해 선언
+    public LayerMask layerMask;
+
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+      boxCollider = GetComponent<BoxCollider2D>();
+      animator = GetComponent<Animator>();
     }
 
     IEnumerator MoveCoroutine()
@@ -43,6 +47,28 @@ public class Robby_Move : MonoBehaviour
               }
               animator.SetFloat("DirX", vector.x);
               animator.SetFloat("DirY", vector.y);
+
+              // A->B로 레이저를 쏴서 제대로 도착했을때 Null, 막혔을때 방해물이 Return
+              RaycastHit2D hit;
+
+              // A지점, 캐릭터의 현재 위치값
+              Vector2 start = transform.position;
+              // B지점, 캐릭터가 이동하고자 하는 위치값 (시작지점+이동값)
+              Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount);
+
+              // 캐릭터에 BoxCollider가 적용되어 있어 그걸 충돌체로 인식하므로 해제 후 설정
+              boxCollider.enabled = false;
+              // 레이저 발사 (시작, 끝, 레이어마스크)
+              hit = Physics2D.Linecast(start, end, layerMask);
+              boxCollider.enabled = true;
+
+              // 벽으로 막혔을때 실행하지 않게 처리
+              if (hit.transform != null)
+              {
+                  break;
+              }
+
+              
               animator.SetBool("Walking", true);
 
 
