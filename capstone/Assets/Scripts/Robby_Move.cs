@@ -8,10 +8,14 @@ public class Robby_Move : MonoBehaviour
     private Vector3 vector;
     public int walkCount;
     private int currentWalkCount;
+    GameObject scanObject;
 
     private bool canMove = true;
 
-      private Animator animator;
+    private Animator animator;
+
+    public TextManager manager;
+
 
       // BoxCollider 컴포넌트를 가져오기 위해 선언
     private BoxCollider2D boxCollider;
@@ -33,9 +37,10 @@ public class Robby_Move : MonoBehaviour
           // 코루틴은 한번만 실행되고 입력이 이뤄지면 계속 실행
           while (Input.GetAxisRaw("Horizontal") !=0 || Input.GetAxisRaw("Vertical") !=0)
           {
-              // Shift키 입력을 확인하여 스피드 값 할당, 입력 여부를 반환
-
-
+              if(manager.isAction == true)
+              {
+                break;
+              }
               // 변수 vector의 값으로 입력한 방향키 값을 할당 -1 또는 1
               vector.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), transform.position.z);
 
@@ -65,10 +70,11 @@ public class Robby_Move : MonoBehaviour
               // 벽으로 막혔을때 실행하지 않게 처리
               if (hit.transform != null)
               {
+                  scanObject = hit.collider.gameObject;
                   break;
               }
 
-              
+
               animator.SetBool("Walking", true);
 
 
@@ -116,6 +122,11 @@ public class Robby_Move : MonoBehaviour
                 canMove = false;
                 StartCoroutine(MoveCoroutine());
             }
+        }
+
+        if(Input.GetButtonDown("Jump") && scanObject != null)
+        {
+          manager.Action(scanObject);
         }
     }
 }
