@@ -65,6 +65,7 @@ public class Robby_Move : MonoBehaviour
               boxCollider.enabled = false;
               // 레이저 발사 (시작, 끝, 레이어마스크)
               hit = Physics2D.Linecast(start, end, layerMask);
+              //hit = Physics2D.Raycast(start, end, 0.7f, layerMask);
               boxCollider.enabled = true;
 
               // 벽으로 막혔을때 실행하지 않게 처리
@@ -72,6 +73,10 @@ public class Robby_Move : MonoBehaviour
               {
                   scanObject = hit.collider.gameObject;
                   break;
+              }
+              else
+              {
+                scanObject = null;
               }
 
 
