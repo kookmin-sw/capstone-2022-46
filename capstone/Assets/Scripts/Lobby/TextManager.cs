@@ -13,10 +13,17 @@ public class TextManager : MonoBehaviour
     public bool isAction;
     public int talkIndex;
 
+    public bool isSelect;
+
+    //public SelectManager selectManager;
+
+
+
     public void Action(GameObject attach)
     {
 
       isAction = true;
+
       scanObject = attach;
       ObjData objData = scanObject.GetComponent<ObjData>();
       Talk(objData.id, objData.isNpc);
@@ -31,6 +38,18 @@ public class TextManager : MonoBehaviour
 
       if(talkData == null)
       {
+
+        if(id == 1 )
+        {
+          //selectManager.activePortal();
+          GameObject.Find("Canvas").transform.Find("portal").gameObject.SetActive(true);
+          isSelect = true;
+          Debug.Log("들어왔음");
+          //return;
+        }
+
+
+
         isAction = false;
         talkIndex = 0;
         return;
@@ -41,6 +60,7 @@ public class TextManager : MonoBehaviour
         talkText.text = talkData;
         portraitImg.sprite = talkManager.GetPortrait(id);
         portraitImg.color = new Color(1,1,1,1);
+        //GameObject.Find("Canvas").transform.Find("test").gameObject.SetActive(true);
       }
       else
       {
@@ -52,4 +72,11 @@ public class TextManager : MonoBehaviour
        talkIndex++;
 
     }
+
+
+
+
+
+
+
 }

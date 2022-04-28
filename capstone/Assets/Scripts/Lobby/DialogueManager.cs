@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
     Dictionary<int, Sprite> portraitData;
+    Dictionary<int, Button> selectButton;
 
     public Sprite[] portraitArr;
+
+    public Button[] buttonArr;
 
     // Start is called before the first frame update
     void Awake()
     {
         talkData = new Dictionary<int, string[]>();
         portraitData = new Dictionary<int, Sprite>();
+        selectButton = new Dictionary<int, Button>();
         GenerateData();
     }
 
@@ -30,6 +35,9 @@ public class DialogueManager : MonoBehaviour
 
       portraitData.Add(100, portraitArr[0]);
       portraitData.Add(200, portraitArr[1]);
+
+      selectButton.Add(1, buttonArr[0]);
+      selectButton.Add(2, buttonArr[1]);
     }
 
     public string GetTalk(int id, int talkIndex)
@@ -49,6 +57,11 @@ public class DialogueManager : MonoBehaviour
     public Sprite GetPortrait(int id)
     {
       return portraitData[id];
+    }
+
+    public Button GetButton(int id)
+    {
+      return selectButton[id];
     }
 
 }

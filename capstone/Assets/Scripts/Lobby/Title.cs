@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
-    public string sceneName = "Game_robby";
+    public string sceneName = "Game_Lobby";
 
     public void ClickStart()
     {

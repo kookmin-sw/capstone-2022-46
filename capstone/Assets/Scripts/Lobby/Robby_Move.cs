@@ -15,7 +15,7 @@ public class Robby_Move : MonoBehaviour
     private Animator animator;
 
     public TextManager manager;
-
+    //public SelectManager select;
 
       // BoxCollider 컴포넌트를 가져오기 위해 선언
     private BoxCollider2D boxCollider;
@@ -37,7 +37,7 @@ public class Robby_Move : MonoBehaviour
           // 코루틴은 한번만 실행되고 입력이 이뤄지면 계속 실행
           while (Input.GetAxisRaw("Horizontal") !=0 || Input.GetAxisRaw("Vertical") !=0)
           {
-              if(manager.isAction == true)
+              if(manager.isAction == true || manager.isSelect == true)
               {
                 break;
               }
