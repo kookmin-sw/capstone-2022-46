@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+
 
 public class SelectManager : MonoBehaviour
 {
@@ -11,7 +13,8 @@ public class SelectManager : MonoBehaviour
   public void exit_Portal()
   {
     GameObject.Find("Canvas").transform.Find("portal").gameObject.SetActive(false);
-    //isSelect = false;
+    EventSystem.current.SetSelectedGameObject(null);
+
     manager.isSelect = false;
   }
 
