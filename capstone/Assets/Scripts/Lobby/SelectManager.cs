@@ -22,4 +22,12 @@ public class SelectManager : MonoBehaviour
   {
     SceneManager.LoadScene("MainGame");
   }
+
+  public void exit_Shop()
+  {
+    GameObject.Find("Canvas").transform.Find("shop").gameObject.SetActive(false);
+    EventSystem.current.SetSelectedGameObject(null);
+
+    manager.isSelect = false;
+  }
 }
