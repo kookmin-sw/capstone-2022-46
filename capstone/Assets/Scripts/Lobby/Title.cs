@@ -10,7 +10,8 @@ public class Title : MonoBehaviour
     public void ClickStart()
     {
         Debug.Log("로딩");
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
+        Loading.LoadScene("Game_Lobby");
     }
 
     public void ClickLoad()
@@ -22,5 +23,12 @@ public class Title : MonoBehaviour
     {
         Debug.Log("게임 종료");
         Application.Quit();
+    }
+
+    public void PortalStart()
+    {
+      Debug.Log("인게임 들어감");
+      //SceneManager.LoadScene(sceneName);
+      Loading.LoadScene("MainGame");
     }
 }

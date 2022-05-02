@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 125a2e125d971a645824bd6559fa0ce1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5050028395917659592
+    second: foottest-Sheet_0
+  - first:
+      213: -1308914052106801179
+    second: foottest-Sheet_1
+  - first:
+      213: -6028363877888475421
+    second: foottest-Sheet_2
+  - first:
+      213: 2374792319041181836
+    second: foottest-Sheet_3
+  - first:
+      213: -2053821501981594739
+    second: foottest-Sheet_4
+  - first:
+      213: 5947302109486560620
+    second: foottest-Sheet_5
+  - first:
+      213: -5256716756776373866
+    second: foottest-Sheet_6
+  - first:
+      213: -4066431670011591498
+    second: foottest-Sheet_7
+  - first:
+      213: 6087565508446785945
+    second: foottest-Sheet_8
+  - first:
+      213: 8479648364827207879
+    second: foottest-Sheet_9
+  - first:
+      213: -5761537301919770339
+    second: foottest-Sheet_10
+  - first:
+      213: 6543361033127696313
+    second: foottest-Sheet_11
+  - first:
+      213: 1348564984632259063
+    second: foottest-Sheet_12
+  - first:
+      213: -7338118928359473173
+    second: foottest-Sheet_13
+  - first:
+      213: 1021784778636419580
+    second: foottest-Sheet_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: foottest-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 204
+        width: 115
+        height: 136
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83231bb1ee1bae9b0800000000000000
+      internalID: -5050028395917659592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 191
+        width: 117
+        height: 149
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef28a2ca9dc5dde0800000000000000
+      internalID: -1308914052106801179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 173
+        width: 117
+        height: 167
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee39a12ef2f65ca0800000000000000
+      internalID: -6028363877888475421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 160
+        width: 120
+        height: 180
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8896cf2805f4f020800000000000000
+      internalID: 2374792319041181836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 148
+        width: 120
+        height: 192
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8be35eb93c5f73e0800000000000000
+      internalID: -2053821501981594739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 134
+        width: 117
+        height: 206
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c65b0e722cf098250800000000000000
+      internalID: 5947302109486560620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 119
+        width: 117
+        height: 221
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691308306f36c07b0800000000000000
+      internalID: -5256716756776373866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 102
+        width: 119
+        height: 238
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b48f85e0f12197c0800000000000000
+      internalID: -4066431670011591498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 90
+        width: 118
+        height: 250
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99114ed93906b7450800000000000000
+      internalID: 6087565508446785945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 83
+        width: 119
+        height: 257
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c86fbdb243cda570800000000000000
+      internalID: 8479648364827207879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 74
+        width: 119
+        height: 266
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d19d8ee8958ea00b0800000000000000
+      internalID: -5761537301919770339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 54
+        width: 116
+        height: 286
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b795b00130beca50800000000000000
+      internalID: 6543361033127696313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2193
+        y: 36
+        width: 119
+        height: 304
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1398165b017b210800000000000000
+      internalID: 1348564984632259063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2373
+        y: 21
+        width: 119
+        height: 319
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef3093b6b3c92a90800000000000000
+      internalID: -7338118928359473173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: foottest-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 6
+        width: 118
+        height: 334
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1668fa7db1e2e00800000000000000
+      internalID: 1021784778636419580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

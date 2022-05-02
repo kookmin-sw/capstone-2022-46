@@ -48,6 +48,12 @@ public class TextManager : MonoBehaviour
           //return;
         }
 
+        if(id == 200)
+        {
+          GameObject.Find("Canvas").transform.Find("shop").gameObject.SetActive(true);
+          isSelect = true;
+        }
+
 
 
         isAction = false;

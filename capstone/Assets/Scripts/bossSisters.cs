@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class bossSisters : MonoBehaviour
 {
     public string enemyName;
     public int enemyScore;
-    public int coinDrop;
-    public int ringDrop;
-    public int ticketDrop;
+    //public int coinDrop;
+    //public int ringDrop;
+    //public int ticketDrop;
     public float maxHP;
     public float health;
     public float Speed;
@@ -19,8 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     public GameObject bullet;
     public GameObject itemCoin;
-    public GameObject itemRing;
-    public GameObject itemTicket;
+    //public GameObject itemRing;
+    //public GameObject itemTicket;
     public GameObject player;
     public ObjectManager objectManager;
 
@@ -28,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
 
-    public int patternIndex;
+    public int patternIndex = 0;
     public int curPatternCount;
     public int[] maxPatternCount;
 
@@ -36,26 +36,14 @@ public class EnemyBehaviour : MonoBehaviour
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
-        if (enemyName == "Boss")
-            anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
 
     void OnEnable()
     {
-        switch (enemyName)
-        {
-            case "enemy001":
-                health = 15;
-                break;
-            case "enemy002":
-                health = 40;
-                break;
-            case "bossSisters":
-                health = 100;
-                Invoke("Stop", 2);
-                break;
-        }
+      health = 100;
+      Invoke("Stop", 2);
     }
 
     void Stop()
@@ -66,7 +54,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Think()
     {
-        patternIndex = patternIndex == 1 ? 0 : patternIndex + 1;
+        //patternIndex = patternIndex == 1 ? 0 : patternIndex + 1;
         curPatternCount = 0;
 
         switch (patternIndex)
@@ -81,6 +69,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void FireRight()
     {
+        Debug.Log("원형 패턴.");
         int bulletNum = 20;
         for(int index = 0; index < bulletNum; index++)
         {
@@ -129,11 +118,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
     {
         Player playerLogic = player.GetComponent<Player>();
-        if (col.gameObject.tag == "Player")
-        {
-            gameObject.SetActive(false);
-        }
-        else if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "Bullet")
         {
             onHit(playerLogic.dmg);
         }
@@ -166,23 +151,8 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Player playerLogic = player.GetComponent<Player>();
             playerLogic.score += enemyScore;
-            int ran = enemyName == "bossSisters" ? 0 : Random.Range(0, 100);//퍼센테이지로 표기
-            if (ran < ticketDrop)
-            {
-                GameObject itemTicket = objectManager.MakeObj("itemTicket");
-                itemTicket.transform.position = transform.position;
-            }
-            else if (ran < ticketDrop + ringDrop)
-            {
-                GameObject itemRing = objectManager.MakeObj("itemRing");
-                itemRing.transform.position = transform.position;
-            }
-            else
-            {
-                GameObject itemCoin = objectManager.MakeObj("itemCoin");
-                itemCoin.transform.position = transform.position;
-            }
-            Debug.Log("적 체력 000000");
+
+            Debug.Log("boss 체력 000000");
             gameObject.SetActive(false);
         }
     }

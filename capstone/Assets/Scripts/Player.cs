@@ -92,6 +92,23 @@ public class Player : MonoBehaviour
             //gameObject.SetActive(false);
 
         }
+
+        //보스 발바닥 부분 Test
+        if(col.gameObject.tag == "Boss")
+        {
+
+          health -= health/2; //피 50퍼 감소.
+          Debug.Log("적과 플레이어 충돌");
+          //enemyAtk.gameObject.SetActive(false);
+          if (health <= 0)
+          {
+              GameManager manager = gameManager.GetComponent<GameManager>();
+              manager.GameOver();
+          }
+        }
+
+
+
     }
 
     private void Move(){

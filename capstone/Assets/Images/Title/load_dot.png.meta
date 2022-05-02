@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 0669c091922a8064397f58a23ef5357b
+guid: 1f80184c5648acf459e47a29e3906020
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4638060209416621146
-    second: foot-Sheet_0
+      213: -376978380280485545
+    second: load_dot_0
   - first:
-      213: 7483035031547864837
-    second: foot-Sheet_1
+      213: -1633823951383062535
+    second: load_dot_1
   - first:
-      213: -7278514780782593448
-    second: foot-Sheet_2
+      213: -4542660205364430380
+    second: load_dot_2
   - first:
-      213: 8834818221625606517
-    second: foot-Sheet_3
+      213: -8556229576951714265
+    second: load_dot_3
   - first:
-      213: 1661508909259259307
-    second: foot-Sheet_4
+      213: -3520413861517250432
+    second: load_dot_4
   - first:
-      213: -8215258617145418851
-    second: foot-Sheet_5
+      213: -109120823449432842
+    second: load_dot_5
   - first:
-      213: 8762606307108186834
-    second: foot-Sheet_6
+      213: 2630010424433433521
+    second: load_dot_6
+  - first:
+      213: 9216949201670931576
+    second: load_dot_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: foot-Sheet_0
+      name: load_dot_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 207
-        width: 114
-        height: 133
+        x: 0
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a339d220dc42afb0800000000000000
-      internalID: -4638060209416621146
+      spriteID: 75921631924b4caf0800000000000000
+      internalID: -376978380280485545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: foot-Sheet_1
+      name: load_dot_1
       rect:
         serializedVersion: 2
-        x: 215
-        y: 191
-        width: 115
-        height: 149
+        x: 250
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 507e631e6b419d760800000000000000
-      internalID: 7483035031547864837
+      spriteID: 9f79948c5cd7359e0800000000000000
+      internalID: -1633823951383062535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: foot-Sheet_2
+      name: load_dot_2
       rect:
         serializedVersion: 2
-        x: 395
-        y: 174
-        width: 116
-        height: 166
+        x: 500
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85af50fbe558dfa90800000000000000
-      internalID: -7278514780782593448
+      spriteID: 4d933fb7c9a35f0c0800000000000000
+      internalID: -4542660205364430380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: foot-Sheet_3
+      name: load_dot_3
       rect:
         serializedVersion: 2
-        x: 575
-        y: 162
-        width: 116
-        height: 178
+        x: 750
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 571842b1d549b9a70800000000000000
-      internalID: 8834818221625606517
+      spriteID: 72e2a19588a224980800000000000000
+      internalID: -8556229576951714265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: foot-Sheet_4
+      name: load_dot_4
       rect:
         serializedVersion: 2
-        x: 755
-        y: 147
-        width: 116
-        height: 193
+        x: 1000
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +225,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bad7b87cc8dde0710800000000000000
-      internalID: 1661508909259259307
+      spriteID: 08037e1be3af42fc0800000000000000
+      internalID: -3520413861517250432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: foot-Sheet_5
+      name: load_dot_5
       rect:
         serializedVersion: 2
-        x: 935
-        y: 133
-        width: 116
-        height: 207
+        x: 1250
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9b941360d98dfd80800000000000000
-      internalID: -8215258617145418851
+      spriteID: 6fcc2b070335c7ef0800000000000000
+      internalID: -109120823449432842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: foot-Sheet_6
+      name: load_dot_6
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 121
-        width: 116
-        height: 219
+        x: 1500
+        y: 0
+        width: 250
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,8 +267,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dae7c192080b9970800000000000000
-      internalID: 8762606307108186834
+      spriteID: 1bbddefeb8caf7420800000000000000
+      internalID: 2630010424433433521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: load_dot_7
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 0
+        width: 250
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8748a66277e29ef70800000000000000
+      internalID: 9216949201670931576
       vertices: []
       indices: 
       edges: []
