@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public float curShotDelay;
     public int score;
     public int money = 0;
-    public int ring = 0;
+    public int ring;
     public bool ticket = false;
 
     public GameObject enemyAtk;
@@ -29,7 +29,10 @@ public class Player : MonoBehaviour
         curShotDelay += Time.deltaTime;
         Fire();
     }
-
+    private void Awake()
+    {
+      //  GameLoad();
+    }
     void Fire()
     {
         if (!Input.GetKey(KeyCode.Space))
@@ -107,8 +110,6 @@ public class Player : MonoBehaviour
           }
         }
 
-
-
     }
 
     private void Move(){
@@ -140,5 +141,4 @@ public class Player : MonoBehaviour
       Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos); //다시 월드 좌표로 변환한다.
       transform.position = worldPos; //좌표를 적용한다.
     }
-
 }

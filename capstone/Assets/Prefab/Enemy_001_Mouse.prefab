@@ -112,11 +112,14 @@ MonoBehaviour:
   itemCoin: {fileID: 0}
   itemRing: {fileID: 0}
   itemTicket: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 8960890943106198213, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
   objectManager: {fileID: 0}
   sprites:
   - {fileID: -7037991341391351084, guid: 7254ded3054f48043883aae078d215ed, type: 3}
   - {fileID: 5084608276489939853, guid: 7254ded3054f48043883aae078d215ed, type: 3}
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
 --- !u!50 &8169637492296214447
 Rigidbody2D:
   serializedVersion: 4

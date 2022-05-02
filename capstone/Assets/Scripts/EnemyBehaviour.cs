@@ -58,7 +58,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    void Stop()
+    void Stop() //정지부분 이거 동영상이랑 다름.
     {
         Debug.Log("stop");
         Speed = 0;

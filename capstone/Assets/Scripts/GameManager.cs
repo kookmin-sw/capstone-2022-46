@@ -10,21 +10,29 @@ public class GameManager : MonoBehaviour
     public string[] enemyObjs;
     public Transform[] spawnPoints;
 
-
     public float nextSpawnDelay;
     public float curSpawnDelay;
 
     public GameObject player;
     public Text scoreText;
     public GameObject gameOverSet;
+    public GameObject menuSet;
+    public GameObject shopSet;
     public ObjectManager objectManager;
 
     public List<Spawn> spawnList;
     public int spawnIndex;
     public bool spawnEnd;
 
+    public int Ink = 0;
+
     private void Awake()
     {
+        GameLoad();
+
+        menuSet.SetActive(false);
+        shopSet.SetActive(false);
+
         spawnList = new List<Spawn>();
         enemyObjs = new string[]{"enemy001", "enemy002", "bossSisters"};
         ReadSpawnFile();
@@ -46,7 +54,7 @@ public class GameManager : MonoBehaviour
             if (line == null)
                 break;
             //리스폰 데이터 생성
-            Spawn spawnData = new Spawn();
+            Spawn spawnData = gameObject.AddComponent<Spawn>();
             spawnData.delay = float.Parse(line.Split(',')[0]);
             spawnData.type = line.Split(',')[1];
             spawnData.point = int.Parse(line.Split(',')[2]);
@@ -58,12 +66,26 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+
+        if (Input.GetButtonDown("Cancel")) // 메뉴 조작
+        {
+            if (menuSet.activeSelf && shopSet.activeSelf)
+                shopSet.SetActive(false);
+            else if (menuSet.activeSelf)
+                menuSet.SetActive(false);
+            else menuSet.SetActive(true);
+        }
+
+        if (menuSet.activeSelf) // 메뉴 실행시 게임 일시정지
+            Time.timeScale = 0f;
+        else Time.timeScale = 1f;
+
         curSpawnDelay += Time.deltaTime;
         if (curSpawnDelay > nextSpawnDelay && !spawnEnd)
         {
             SpawnEnemy();
             curSpawnDelay = 0;
-        } 
+        } //스폰
         Player playerLogic = player.GetComponent<Player>();
         //에러나서 잠깐지움.
       //  scoreText.text = string.Format("{0:n0}", playerLogic.score);
@@ -101,6 +123,17 @@ public class GameManager : MonoBehaviour
         nextSpawnDelay = spawnList[spawnIndex].delay;
     }
 
+    public void GameSave()
+    {
+        Player playerData = player.GetComponent<Player>();
+        PlayerPrefs.SetInt("InkBottle", playerData.money);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
+        PlayerPrefs.Save();
+    }
+    public void GameLoad()
+    {
+        Ink = PlayerPrefs.GetInt("InkBottle");
+    }
+
     public void RespawnPlayer()
     {
         player.transform.position = Vector3.down * 3.5f;
@@ -119,8 +152,13 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-    public void GoUpgrade()
+    public void GoShop()
     {
-        SceneManager.LoadScene("Upgrade");
+        shopSet.SetActive(true);
+    }
+    public void GameExit()
+    {
+        GameSave();
+        Application.Quit();
     }
 }
