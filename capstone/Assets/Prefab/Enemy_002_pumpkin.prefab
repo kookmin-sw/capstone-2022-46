@@ -132,11 +132,14 @@ MonoBehaviour:
   itemCoin: {fileID: 0}
   itemRing: {fileID: 0}
   itemTicket: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 8960890943106198213, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
   objectManager: {fileID: 0}
   sprites:
   - {fileID: 8239109769189081435, guid: f407977ef641187458685ce145e99291, type: 3}
   - {fileID: 21300000, guid: df37ffa2de80b144c894f19a220a95c9, type: 3}
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
 --- !u!70 &9060786725829897341
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

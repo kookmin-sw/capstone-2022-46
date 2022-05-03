@@ -12,8 +12,10 @@ public class GameManager : MonoBehaviour
 
     public float nextSpawnDelay;
     public float curSpawnDelay;
+    public float bossSpawnDelay;
 
     public GameObject player;
+    public GameObject boss;
     public Text scoreText;
     public GameObject gameOverSet;
     public GameObject menuSet;
@@ -34,8 +36,10 @@ public class GameManager : MonoBehaviour
         shopSet.SetActive(false);
 
         spawnList = new List<Spawn>();
-        enemyObjs = new string[]{"enemy001", "enemy002", "bossSisters"};
+        enemyObjs = new string[]{"enemy001", "enemy002"};
         ReadSpawnFile();
+        //SpawnBoss();
+        Invoke("SpawnBoss",bossSpawnDelay);
     }
     void ReadSpawnFile()
     {
@@ -102,9 +106,7 @@ public class GameManager : MonoBehaviour
             case "enemy002":
                 enemyIndex = 1;
                 break;
-            case "bossSisters":
-                enemyIndex = 2;
-                break;
+
         }
         int enemyPoint = spawnList[spawnIndex].point;
         GameObject enemy = objectManager.MakeObj(enemyObjs[enemyIndex]);
@@ -121,6 +123,25 @@ public class GameManager : MonoBehaviour
             spawnEnd = true;
         }
         nextSpawnDelay = spawnList[spawnIndex].delay;
+    }
+
+    void SpawnBoss()
+    {
+      Debug.Log("보스생성함");
+      GameObject boss = objectManager.MakeObj("bossSisters");
+      boss.SetActive(true); //생성하고 안보이게
+      //bossSpawnDelay = 5;
+      //int timer = 0;
+      //Debug.Log("보스생성함");
+
+    }
+
+    IEnumerator WaitForBoss()
+    {
+      Debug.Log("코루틴 들어옴");
+        yield return new WaitForSeconds(bossSpawnDelay);
+        boss.SetActive(true);
+        Debug.Log("보스활성화");
     }
 
     public void GameSave()

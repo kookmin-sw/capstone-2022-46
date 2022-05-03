@@ -37,6 +37,8 @@ public class bossSisters : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
         anim = GetComponent<Animator>();
+        objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
+
     }
 
 
@@ -46,7 +48,7 @@ public class bossSisters : MonoBehaviour
       Invoke("Stop", 2);
     }
 
-    void Stop()
+    void Stop() //정지부분 이거 동영상이랑 다름.
     {
         Debug.Log("stop");
         Speed = 0;
@@ -54,32 +56,22 @@ public class bossSisters : MonoBehaviour
     }
     void Think()
     {
-        //patternIndex = patternIndex == 1 ? 0 : patternIndex + 1;
-        curPatternCount = 0;
-
-        switch (patternIndex)
-        {
-            case 0:
-                FireRight();
-                break;
-            case 1:
-                PunchLeft();
-                break;
-        }
+        FireRight();
     }
+
     void FireRight()
     {
-        Debug.Log("원형 패턴.");
         int bulletNum = 20;
         for(int index = 0; index < bulletNum; index++)
         {
             Debug.Log(index);
             GameObject bullet = objectManager.MakeObj("bulletBossSisters");
+            //Debug.Log("보스신발 생성");
             bullet.transform.position = transform.position;//위치는 약간 미세조정 필요
             bullet.transform.rotation = Quaternion.identity;
 
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
-            Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 2 * index / 180), Mathf.Sin(Mathf.PI * 2 * index / 180));
+            Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 2 * index / bulletNum), Mathf.Sin(Mathf.PI * 2 * index / bulletNum));
             rigid.AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
 
             Vector3 rotVec = Vector3.forward * 360 * index / bulletNum + Vector3.forward * 90;
@@ -88,10 +80,13 @@ public class bossSisters : MonoBehaviour
 
         curPatternCount++;
 
+/*
         if(curPatternCount < maxPatternCount[patternIndex])
             Invoke("FireRight", 0.3f); // 재시전
         else
             Invoke("Think", 3); // 다음 패턴으로
+
+  */
     }
     void PunchLeft()
     {

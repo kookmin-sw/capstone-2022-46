@@ -37,7 +37,7 @@ public class ObjectManager : MonoBehaviour
         //itemTicket = new GameObject[1];
 
         bulletPlayer = new GameObject[20];
-        bulletBossSisters = new GameObject[20];
+        bulletBossSisters = new GameObject[50];
 
         Genarate();
     }
@@ -54,7 +54,7 @@ public class ObjectManager : MonoBehaviour
         {
             enemy002[index] = Instantiate(enemy002Prefab);
             enemy002[index].SetActive(false);
-        }                                                               
+        }
         for (int index = 0; index < bossSisters.Length; index++)
         {
             bossSisters[index] = Instantiate(bossSistersPrefab);
@@ -83,12 +83,12 @@ public class ObjectManager : MonoBehaviour
         {
             bulletBossSisters[index] = Instantiate(bulletSistersPrefab);
             bulletBossSisters[index].SetActive(false);
-        } 
+        }
 
     }
     public GameObject MakeObj(string type)
     {
-        
+
         switch (type)
         {
             case "enemy001":

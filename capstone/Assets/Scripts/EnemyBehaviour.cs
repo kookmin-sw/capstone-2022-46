@@ -51,10 +51,13 @@ public class EnemyBehaviour : MonoBehaviour
             case "enemy002":
                 health = 40;
                 break;
+
+                /*
             case "bossSisters":
                 health = 100;
                 Invoke("Stop", 2);
                 break;
+                */
         }
     }
 
@@ -66,6 +69,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void Think()
     {
+        /*
         patternIndex = patternIndex == 1 ? 0 : patternIndex + 1;
         curPatternCount = 0;
 
@@ -78,6 +82,9 @@ public class EnemyBehaviour : MonoBehaviour
                 PunchLeft();
                 break;
         }
+        */
+        FireRight();
+
     }
     void FireRight()
     {
@@ -90,7 +97,7 @@ public class EnemyBehaviour : MonoBehaviour
             bullet.transform.rotation = Quaternion.identity;
 
             Rigidbody2D rigid = bullet.GetComponent<Rigidbody2D>();
-            Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 2 * index / 180), Mathf.Sin(Mathf.PI * 2 * index / 180));
+            Vector2 dirVec = new Vector2(Mathf.Cos(Mathf.PI * 2 * index / bulletNum), Mathf.Sin(Mathf.PI * 2 * index / bulletNum));
             rigid.AddForce(dirVec.normalized * 10, ForceMode2D.Impulse);
 
             Vector3 rotVec = Vector3.forward * 360 * index / bulletNum + Vector3.forward * 90;
@@ -99,10 +106,13 @@ public class EnemyBehaviour : MonoBehaviour
 
         curPatternCount++;
 
+/*
         if(curPatternCount < maxPatternCount[patternIndex])
             Invoke("FireRight", 0.3f); // 재시전
         else
             Invoke("Think", 3); // 다음 패턴으로
+
+  */
     }
     void PunchLeft()
     {

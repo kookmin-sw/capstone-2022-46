@@ -549,7 +549,7 @@ MonoBehaviour:
   itemRingPrefab: {fileID: 6466664685848868856, guid: 7ed2999751198db4cb86739ca411ecc3, type: 3}
   itemTicketPrefab: {fileID: 4502129316254352192, guid: 6639043fbe1972f4c94fb7d254dc6b39, type: 3}
   bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
-  bulletSistersPrefab: {fileID: 8169637492296214450, guid: 189d5b989422e40418bba0e6deee0b45, type: 3}
+  bulletSistersPrefab: {fileID: 4160535500904387944, guid: 540ad09194e2ff942af3361999e34252, type: 3}
 --- !u!4 &713402420
 Transform:
   m_ObjectHideFlags: 0

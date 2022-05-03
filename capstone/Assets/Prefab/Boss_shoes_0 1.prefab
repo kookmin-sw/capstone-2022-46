@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5743493269877129729}
   - component: {fileID: 1574667600019935467}
   - component: {fileID: -495150126163376393}
+  - component: {fileID: 5921947434106432284}
   m_Layer: 0
   m_Name: Boss_shoes_0 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4160535500904387944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d26f0eefab497fd4bbb8450d808e4780, type: 3}
   m_Name: 
@@ -191,3 +192,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5921947434106432284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160535500904387944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adb0357527fc8b49951021cc53d5ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyName: 
+  enemyScore: 0
+  coinDrop: 0
+  ringDrop: 0
+  ticketDrop: 0
+  maxHP: 0
+  health: 0
+  Speed: 2.5
+  dmg: 10
+  maxShotDelay: 0
+  curShotDelay: 0
+  bullet: {fileID: 4160535500904387944}
+  itemCoin: {fileID: 0}
+  itemRing: {fileID: 0}
+  itemTicket: {fileID: 0}
+  player: {fileID: 8960890943106198213, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
+  objectManager: {fileID: 0}
+  sprites: []
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 

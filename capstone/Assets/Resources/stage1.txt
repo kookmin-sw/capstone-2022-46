@@ -1,3 +1,2 @@
-1,bossSisters,6
 2,enemy001,4
 3,enemy002,10
