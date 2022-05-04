@@ -145,6 +145,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else if (col.gameObject.tag == "Bullet")
         {
+          Debug.Log("잡몹 받는 데미지 : " + playerLogic.dmg);
             onHit(playerLogic.dmg);
         }
 

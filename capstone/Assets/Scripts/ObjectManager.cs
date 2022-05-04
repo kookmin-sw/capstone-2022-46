@@ -55,12 +55,13 @@ public class ObjectManager : MonoBehaviour
             enemy002[index] = Instantiate(enemy002Prefab);
             enemy002[index].SetActive(false);
         }
+        /*
         for (int index = 0; index < bossSisters.Length; index++)
         {
             bossSisters[index] = Instantiate(bossSistersPrefab);
             bossSisters[index].SetActive(false);
         }
-
+        */
         for (int index = 0; index < itemCoin.Length; index++)
         {
             itemCoin[index] = Instantiate(itemCoinPrefab);
@@ -97,9 +98,11 @@ public class ObjectManager : MonoBehaviour
             case "enemy002":
                 targetPool = enemy002;
                 break;
+                /*
             case "bossSisters":
                 targetPool = bossSisters;
                 break;
+                */
             case "itemCoin":
                 targetPool = itemCoin;
                 break;
@@ -109,9 +112,11 @@ public class ObjectManager : MonoBehaviour
             case "bulletPlayer":
                 targetPool = bulletPlayer;
                 break;
+
             case "bulletBossSisters":
                 targetPool = bulletBossSisters;
                 break;
+
         }
 
         for (int index = 0; index < targetPool.Length; index++)
@@ -134,9 +139,11 @@ public class ObjectManager : MonoBehaviour
             case "enemy002":
                 targetPool = enemy002;
                 break;
+                /*
             case "bossSisters":
                 targetPool = bossSisters;
                 break;
+                */
             case "itemCoin":
                 targetPool = itemCoin;
                 break;
@@ -146,9 +153,11 @@ public class ObjectManager : MonoBehaviour
             case "bulletPlayer":
                 targetPool = bulletPlayer;
                 break;
+
             case "bulletBossSisters":
                 targetPool = bulletBossSisters;
                 break;
+
         }
         return targetPool;
     }

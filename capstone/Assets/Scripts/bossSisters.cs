@@ -115,7 +115,13 @@ public class bossSisters : MonoBehaviour
         Player playerLogic = player.GetComponent<Player>();
         if (col.gameObject.tag == "Bullet")
         {
+            Debug.Log("boss 받는 데미지 : " + playerLogic.dmg);
+
             onHit(playerLogic.dmg);
+        }
+        else if(col.gameObject.tag == "Player")
+        {
+          gameObject.SetActive(false);
         }
 
     }
@@ -127,10 +133,12 @@ public class bossSisters : MonoBehaviour
 
     void onHit(float dmg)
     {
+      Debug.Log("onhit in");
         if (health <= 0)
             return;
 
         health -= dmg;
+        Debug.Log("boss 체력 감소");
         //데미지 받은 스프라이트(색깔만 점멸해도 됨)
       /*  if(enemyName == "bossSisters")
         {

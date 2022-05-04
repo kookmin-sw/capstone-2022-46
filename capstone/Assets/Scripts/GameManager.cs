@@ -128,8 +128,13 @@ public class GameManager : MonoBehaviour
     void SpawnBoss()
     {
       Debug.Log("보스생성함");
+      Instantiate(boss);
+
+      /*
       GameObject boss = objectManager.MakeObj("bossSisters");
-      boss.SetActive(true); //생성하고 안보이게
+      boss.SetActive(true);
+      */
+
       //bossSpawnDelay = 5;
       //int timer = 0;
       //Debug.Log("보스생성함");
