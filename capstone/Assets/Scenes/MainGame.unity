@@ -2178,6 +2178,8 @@ MonoBehaviour:
   itemTicketPrefab: {fileID: 4502129316254352192, guid: 6639043fbe1972f4c94fb7d254dc6b39, type: 3}
   bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
   bulletSistersPrefab: {fileID: 4160535500904387944, guid: 540ad09194e2ff942af3361999e34252, type: 3}
+  bossFoot_L_Prefab: {fileID: 7767441791047775796, guid: 7814c641d43ef3d418db071756afb86b, type: 3}
+  bossFoot_R_Prefab: {fileID: 5802197347581443334, guid: 9bfa1dcc50f603644b7264e8dc27bdfa, type: 3}
 --- !u!4 &1788788542
 Transform:
   m_ObjectHideFlags: 0

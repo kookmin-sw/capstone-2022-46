@@ -130,24 +130,9 @@ public class GameManager : MonoBehaviour
       Debug.Log("보스생성함");
       Instantiate(boss);
 
-      /*
-      GameObject boss = objectManager.MakeObj("bossSisters");
-      boss.SetActive(true);
-      */
-
-      //bossSpawnDelay = 5;
-      //int timer = 0;
-      //Debug.Log("보스생성함");
-
     }
 
-    IEnumerator WaitForBoss()
-    {
-      Debug.Log("코루틴 들어옴");
-        yield return new WaitForSeconds(bossSpawnDelay);
-        boss.SetActive(true);
-        Debug.Log("보스활성화");
-    }
+
 
     public void GameSave()
     {

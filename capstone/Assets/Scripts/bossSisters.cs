@@ -24,6 +24,9 @@ public class bossSisters : MonoBehaviour
     public GameObject player;
     public ObjectManager objectManager;
 
+    public GameObject boss_foot_R;
+    public GameObject boss_foot_L;
+
     public Sprite[] sprites;
     SpriteRenderer spriteRenderer;
     Animator anim;
@@ -41,14 +44,20 @@ public class bossSisters : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        moveControl();
+    }
 
+
+    //생성됨.
     void OnEnable()
     {
       health = 100;
       Invoke("Stop", 2);
     }
 
-    void Stop() //정지부분 이거 동영상이랑 다름.
+    void Stop() //정지부분
     {
         Debug.Log("stop");
         Speed = 0;
@@ -56,9 +65,16 @@ public class bossSisters : MonoBehaviour
     }
     void Think()
     {
-        FireRight();
+        //FireRight();
+        //kickLeft();
+        kickRight();
+
     }
 
+
+
+
+//원형 패턴
     void FireRight()
     {
         int bulletNum = 20;
@@ -88,21 +104,35 @@ public class bossSisters : MonoBehaviour
 
   */
     }
-    void PunchLeft()
+
+
+
+
+  //발 패턴 (왼쪽)
+    void kickLeft()
     {
-        Debug.Log("왼쪽 때리기.");
-        curPatternCount++;
-        //구현 아직 안함. 스프라이트가 필요
-        if(curPatternCount < maxPatternCount[patternIndex])
-            Invoke("PunchLeft", 4); // 재시전
-        else
-            Invoke("Think", 3f); // 다음 패턴으로
+
+        Debug.Log("왼쪽 발 패턴");
+        Instantiate(boss_foot_L);
+
     }
 
-    void Update()
+    //발 패턴 (오른쪽)
+    void kickRight()
     {
-        moveControl();
+        Debug.Log("오른쪽 발 패턴");
+        Instantiate(boss_foot_R);
+
     }
+
+    //발 쿵쾅쿵쾅 패턴
+    void megalodon()
+    {
+      Debug.Log("발 쿵쾅쿵쾅 패턴");
+      
+    }
+
+
 
     void moveControl()
     {

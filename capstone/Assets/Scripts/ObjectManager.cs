@@ -13,6 +13,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject bulletPlayerPrefab;
     public GameObject bulletSistersPrefab;
 
+
     GameObject[] enemy001;
     GameObject[] enemy002;
     GameObject[] bossSisters;
@@ -23,6 +24,9 @@ public class ObjectManager : MonoBehaviour
 
     GameObject[] bulletPlayer;
     GameObject[] bulletBossSisters;
+
+    GameObject[] bossFoot_L;
+    GameObject[] bossFoot_R;
 
     GameObject[] targetPool;
     // Start is called before the first frame update
@@ -38,6 +42,9 @@ public class ObjectManager : MonoBehaviour
 
         bulletPlayer = new GameObject[20];
         bulletBossSisters = new GameObject[50];
+
+
+
 
         Genarate();
     }
@@ -86,7 +93,10 @@ public class ObjectManager : MonoBehaviour
             bulletBossSisters[index].SetActive(false);
         }
 
+
+
     }
+
     public GameObject MakeObj(string type)
     {
 
@@ -116,6 +126,7 @@ public class ObjectManager : MonoBehaviour
             case "bulletBossSisters":
                 targetPool = bulletBossSisters;
                 break;
+
 
         }
 
@@ -157,6 +168,7 @@ public class ObjectManager : MonoBehaviour
             case "bulletBossSisters":
                 targetPool = bulletBossSisters;
                 break;
+
 
         }
         return targetPool;
