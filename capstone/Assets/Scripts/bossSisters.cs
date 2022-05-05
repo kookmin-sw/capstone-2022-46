@@ -24,11 +24,14 @@ public class bossSisters : MonoBehaviour
     public GameObject player;
     public ObjectManager objectManager;
 
+
     public GameObject boss_foot_R;
     public GameObject boss_foot_L;
 
     public Sprite[] sprites;
     SpriteRenderer spriteRenderer;
+
+    //private Animator foot_S;
     Animator anim;
 
     public int patternIndex = 0;
@@ -41,6 +44,8 @@ public class bossSisters : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
         anim = GetComponent<Animator>();
         objectManager = GameObject.Find("ObjectManager").GetComponent<ObjectManager>();
+
+        //foot_S = GetComponent<Animator>();
 
     }
 
@@ -66,8 +71,9 @@ public class bossSisters : MonoBehaviour
     void Think()
     {
         //FireRight();
-        //kickLeft();
-        kickRight();
+        kickLeft();
+        //kickRight();
+        //megalodon();
 
     }
 
@@ -129,7 +135,13 @@ public class bossSisters : MonoBehaviour
     void megalodon()
     {
       Debug.Log("발 쿵쾅쿵쾅 패턴");
-      
+      //boss_foot_L.GetComponent<bossFoot>().setFootSpeed(0.1f);
+      //Instantiate(boss_foot_L);
+      //boss_foot_L.GetComponent<bossFoot>().setFootSpeed(0.1f);
+      //foot_S.SetFloat("foot_speed",1);
+      //Instantiate(boss_foot_L);
+
+
     }
 
 

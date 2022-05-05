@@ -6,9 +6,16 @@ public class bossFoot : MonoBehaviour
 {
     public GameObject bossFootPrefab;
     float time = 0.0f;
+    public Animator f_speed;
 
-    
     // Update is called once per frame
+
+    void Awake()
+    {
+        f_speed = GetComponent<Animator>();
+    }
+
+
     void Update()
     {
       //foot_anim.SetFloat("foot_speed",4);
@@ -22,6 +29,12 @@ public class bossFoot : MonoBehaviour
       }
 
 
+    }
+
+    public void setFootSpeed(float speed)
+    {
+      //float temp = f_speed.GetFloat("foot_speed");
+      f_speed.SetFloat("foot_speed", f_speed.GetFloat("foot_speed") + speed);
     }
 
 

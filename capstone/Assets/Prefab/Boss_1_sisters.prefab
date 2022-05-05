@@ -159,6 +159,7 @@ MonoBehaviour:
   boss_foot_R: {fileID: 5802197347581443334, guid: 9bfa1dcc50f603644b7264e8dc27bdfa, type: 3}
   boss_foot_L: {fileID: 7767441791047775796, guid: 7814c641d43ef3d418db071756afb86b, type: 3}
   sprites: []
+  foot_S: {fileID: 0}
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 
