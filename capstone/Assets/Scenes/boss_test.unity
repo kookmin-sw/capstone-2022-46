@@ -513,6 +513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossFootPrefab: {fileID: 578762327}
+  animator: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &713402418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1521,12 @@ MonoBehaviour:
   itemCoin: {fileID: 0}
   player: {fileID: 0}
   objectManager: {fileID: 713402419}
+  boss_foot_R: {fileID: 5802197347581443334, guid: 9bfa1dcc50f603644b7264e8dc27bdfa, type: 3}
+  boss_foot_L: {fileID: 7767441791047775796, guid: 7814c641d43ef3d418db071756afb86b, type: 3}
+  m_b_f_R: {fileID: 5802197347581443334, guid: 6576b135b663c3b4683a102a25193078, type: 3}
+  m_b_f_L: {fileID: 7767441791047775796, guid: 6ef614b168a12014d99d66151c9a86b1, type: 3}
   sprites: []
+  anim: {fileID: 0}
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 

@@ -143,3 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossFootPrefab: {fileID: 7767441791047775796}
+  animator: {fileID: 0}
+  anim: {fileID: 0}
