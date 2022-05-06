@@ -31,10 +31,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         GameLoad();
-
-        menuSet.SetActive(false);
-        shopSet.SetActive(false);
-
+        
         spawnList = new List<Spawn>();
         enemyObjs = new string[]{"enemy001", "enemy002"};
         ReadSpawnFile();
