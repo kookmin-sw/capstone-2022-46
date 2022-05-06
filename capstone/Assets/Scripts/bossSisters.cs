@@ -23,16 +23,21 @@ public class bossSisters : MonoBehaviour
     //public GameObject itemTicket;
     public GameObject player;
     public ObjectManager objectManager;
+    //public bossFoot bossfoot;
 
 
     public GameObject boss_foot_R;
     public GameObject boss_foot_L;
 
+    //쿵쾅패턴 위한
+    public GameObject m_b_f_R;
+    public GameObject m_b_f_L;
+
     public Sprite[] sprites;
     SpriteRenderer spriteRenderer;
 
     //private Animator foot_S;
-    Animator anim;
+    public Animator anim;
 
     public int patternIndex = 0;
     public int curPatternCount;
@@ -70,8 +75,8 @@ public class bossSisters : MonoBehaviour
     }
     void Think()
     {
-        //FireRight();
-        kickLeft();
+        FireRight();
+        //kickLeft();
         //kickRight();
         //megalodon();
 
@@ -135,13 +140,15 @@ public class bossSisters : MonoBehaviour
     void megalodon()
     {
       Debug.Log("발 쿵쾅쿵쾅 패턴");
-      //boss_foot_L.GetComponent<bossFoot>().setFootSpeed(0.1f);
-      //Instantiate(boss_foot_L);
-      //boss_foot_L.GetComponent<bossFoot>().setFootSpeed(0.1f);
-      //foot_S.SetFloat("foot_speed",1);
-      //Instantiate(boss_foot_L);
 
+      Instantiate(m_b_f_L);
+      Invoke("megal_R",0.2f);
 
+    }
+
+    void megal_R()
+    {
+      Instantiate(m_b_f_R);
     }
 
 
