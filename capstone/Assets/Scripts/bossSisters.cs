@@ -75,10 +75,10 @@ public class bossSisters : MonoBehaviour
     }
     void Think()
     {
-        //FireRight();
+        FireRight();
         //kickLeft();
         //kickRight();
-        megalodon();
+        //megalodon();
 
     }
 
