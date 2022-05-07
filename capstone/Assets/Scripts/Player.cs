@@ -96,12 +96,25 @@ public class Player : MonoBehaviour
 
         }
 
+        if(col.gameObject.tag == "Pen")
+        {
+
+          health -= 10; //피 10퍼 감소.
+          Debug.Log("팬과 플레이어 충돌");
+          //enemyAtk.gameObject.SetActive(false);
+          if (health <= 0)
+          {
+              GameManager manager = gameManager.GetComponent<GameManager>();
+              manager.GameOver();
+          }
+        }
+
         //보스 발바닥 부분 Test
         if(col.gameObject.tag == "Boss")
         {
 
           health -= health/2; //피 50퍼 감소.
-          Debug.Log("적과 플레이어 충돌");
+          Debug.Log("다리와 플레이어 충돌");
           //enemyAtk.gameObject.SetActive(false);
           if (health <= 0)
           {
