@@ -25,8 +25,7 @@ public class GameManager : MonoBehaviour
     public List<Spawn> spawnList;
     public int spawnIndex;
     public bool spawnEnd;
-
-    public int Ink = 0;
+    
 
     private void Awake()
     {
@@ -134,12 +133,12 @@ public class GameManager : MonoBehaviour
     public void GameSave()
     {
         Player playerData = player.GetComponent<Player>();
-        PlayerPrefs.SetInt("InkBottle", playerData.money);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
+        PlayerPrefs.SetInt("InkBottle", playerData.ink);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
         PlayerPrefs.Save();
     }
     public void GameLoad()
     {
-        Ink = PlayerPrefs.GetInt("InkBottle");
+        //Ink = PlayerPrefs.GetInt("InkBottle");
     }
 
     public void RespawnPlayer()

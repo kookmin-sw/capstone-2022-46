@@ -10,6 +10,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject itemCoinPrefab;
     public GameObject itemRingPrefab;
     public GameObject itemTicketPrefab;
+    public GameObject itemInkPrefab;
     public GameObject bulletPlayerPrefab;
     public GameObject bulletSistersPrefab;
     public GameObject penRightPrefab;
@@ -24,6 +25,7 @@ public class ObjectManager : MonoBehaviour
     GameObject[] itemCoin;
     GameObject[] itemTicket;
     GameObject[] itemRing;
+    GameObject[] itemInk;
 
     GameObject[] bulletPlayer;
     GameObject[] bulletBossSisters;
@@ -46,6 +48,7 @@ public class ObjectManager : MonoBehaviour
         itemCoin = new GameObject[10];
         itemRing = new GameObject[3];
         //itemTicket = new GameObject[1];
+        itemInk = new GameObject[3];
 
         bulletPlayer = new GameObject[20];
         bulletBossSisters = new GameObject[50];
@@ -88,6 +91,12 @@ public class ObjectManager : MonoBehaviour
         {
             itemRing[index] = Instantiate(itemRingPrefab);
             itemRing[index].SetActive(false);
+        }
+
+        for (int index = 0; index < itemInk.Length; index++)
+        {
+            itemInk[index] = Instantiate(itemRingPrefab);
+            itemInk[index].SetActive(false);
         }
 
         for (int index = 0; index < bulletPlayer.Length; index++)
@@ -146,6 +155,9 @@ public class ObjectManager : MonoBehaviour
             case "itemRing":
                 targetPool = itemRing;
                 break;
+            case "itemInk":
+                targetPool = itemRing;
+                break;
             case "bulletPlayer":
                 targetPool = bulletPlayer;
                 break;
@@ -198,6 +210,9 @@ public class ObjectManager : MonoBehaviour
                 targetPool = itemCoin;
                 break;
             case "itemRing":
+                targetPool = itemRing;
+                break;
+            case "itemInk":
                 targetPool = itemRing;
                 break;
             case "bulletPlayer":

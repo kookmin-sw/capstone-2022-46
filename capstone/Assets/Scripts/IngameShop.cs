@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class IngameShop : MonoBehaviour
 {
-
     public GameObject player;
+    public GameObject coin;
 
     int price1;
     public Text priceText1;
@@ -30,9 +30,10 @@ public class IngameShop : MonoBehaviour
     public void Purchase()
     {
         Player playerData = player.GetComponent<Player>();
-        if (playerData.money >= price1)
+        GoldState scoreData = coin.GetComponent<GoldState>();
+        if (scoreData.score >= price1)
         {
-            playerData.money -= price1;
+            scoreData.score -= price1;
             price1++;
             priceText1.text = "+10%("+price1+"°ñµå)";
             PowerUp();

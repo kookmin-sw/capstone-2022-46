@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float maxShotDelay;
     public float curShotDelay;
     public int score;
-    public int money = 0;
+    public int ink;
     public int ring;
     public bool ticket = false;
 
@@ -31,7 +31,10 @@ public class Player : MonoBehaviour
     }
     private void Awake()
     {
-      //  GameLoad();
+        
+        if (PlayerPrefs.HasKey("Power")){
+            dmg += PlayerPrefs.GetInt("Power");
+        }
     }
     void Fire()
     {
