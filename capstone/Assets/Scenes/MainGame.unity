@@ -2520,6 +2520,7 @@ MonoBehaviour:
   itemCoinPrefab: {fileID: 8823030452686700451, guid: 9262a077b3ee94d48b33a87261ef4173, type: 3}
   itemRingPrefab: {fileID: 6466664685848868856, guid: 7ed2999751198db4cb86739ca411ecc3, type: 3}
   itemTicketPrefab: {fileID: 4502129316254352192, guid: 6639043fbe1972f4c94fb7d254dc6b39, type: 3}
+  itemInkPrefab: {fileID: 6580572350257389201, guid: 95ae4bb90a0520c45ad616fe14bfb8b8, type: 3}
   bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
   bulletSistersPrefab: {fileID: 4160535500904387944, guid: 540ad09194e2ff942af3361999e34252, type: 3}
   penRightPrefab: {fileID: 4977700710941359773, guid: 06a8a4714de70ed4ca42a28a83860f7a, type: 3}
@@ -3105,7 +3106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: money
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: gameManager
@@ -3115,6 +3116,18 @@ PrefabInstance:
       propertyPath: objectManager
       value: 
       objectReference: {fileID: 1788788541}
+    - target: {fileID: 6590643188225147370, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590643188225147370, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590643188225147370, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147374, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: m_RootOrder
       value: 4
