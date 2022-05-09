@@ -1384,6 +1384,7 @@ MonoBehaviour:
   pen_Left: {fileID: 3267924660002029895, guid: f49ac89d1727a8140af79649d311db72, type: 3}
   delay: 7
   dir: -1
+  objectManager: {fileID: 1788788541}
 --- !u!61 &741486482
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1417,12 +1418,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741486480}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.17, y: 0.01, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.1945, y: 0.023299942, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1336409821}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831892562
 GameObject:
@@ -1931,6 +1932,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316882639}
   m_CullTransparentMesh: 1
+--- !u!1 &1336409820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336409821}
+  m_Layer: 0
+  m_Name: PenSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336409821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336409820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.024499893, y: -0.013299942, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1560172656}
+  - {fileID: 741486483}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416130354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2108,7 @@ MonoBehaviour:
   pen_Left: {fileID: 3267924660002029895, guid: f49ac89d1727a8140af79649d311db72, type: 3}
   delay: 5
   dir: 1
+  objectManager: {fileID: 1788788541}
 --- !u!61 &1560172655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2108,12 +2142,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560172653}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 0.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.085500106, y: 0.17329994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1336409821}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652949514
 GameObject:
@@ -2408,6 +2442,9 @@ MonoBehaviour:
   itemTicketPrefab: {fileID: 4502129316254352192, guid: 6639043fbe1972f4c94fb7d254dc6b39, type: 3}
   bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
   bulletSistersPrefab: {fileID: 4160535500904387944, guid: 540ad09194e2ff942af3361999e34252, type: 3}
+  penRightPrefab: {fileID: 4977700710941359773, guid: 06a8a4714de70ed4ca42a28a83860f7a, type: 3}
+  penLeftPrefab: {fileID: 3267924660002029895, guid: f49ac89d1727a8140af79649d311db72, type: 3}
+  bossFingerPrefab: {fileID: 5639557637024494732, guid: 528533a46e3940244ae7ca8115e80cb9, type: 3}
 --- !u!4 &1788788542
 Transform:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class pen_Spawn : MonoBehaviour
     public int dir;
     BoxCollider2D rangeCollider;
 
+    public ObjectManager objectManager;
+
 
     void Awake()
     {
@@ -52,11 +54,15 @@ public class pen_Spawn : MonoBehaviour
             Vector3 spawnPos = get_RandomPosition();
             if(dir == 1)
             {
-                GameObject instance = Instantiate(pen_Right, spawnPos, Quaternion.identity);
+                //GameObject instance = Instantiate(pen_Right, spawnPos, Quaternion.identity);
+                GameObject instance = objectManager.MakeObj("penRight");
+                instance.transform.position = spawnPos;
             }
             else
             {
-                GameObject instance = Instantiate(pen_Left, spawnPos, Quaternion.identity);
+                //GameObject instance = Instantiate(pen_Left, spawnPos, Quaternion.identity);
+                GameObject instance = objectManager.MakeObj("penLeft");
+                instance.transform.position = spawnPos;
             }
 
             //yield return new WaitForSeconds(delay);

@@ -7,6 +7,7 @@ public class pen_Move : MonoBehaviour
 
     public float Speed;
     public int dir; //오른쪽은 1, 왼쪽은 -1
+    public ObjectManager objectManager;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class pen_Move : MonoBehaviour
 
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
@@ -36,7 +37,7 @@ public class pen_Move : MonoBehaviour
         //Player playerLogic = player.GetComponent<Player>();
         if (col.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }
