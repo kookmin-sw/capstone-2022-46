@@ -11,6 +11,7 @@ TagManager:
   - Item
   - Boss
   - Pen
+  - finger
   layers:
   - Default
   - TransparentFX

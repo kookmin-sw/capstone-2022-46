@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if(col.gameObject.tag == "Pen")
+        if(col.gameObject.tag == "Pen" || col.gameObject.tag == "finger")
         {
 
           health -= 10; //피 10퍼 감소.

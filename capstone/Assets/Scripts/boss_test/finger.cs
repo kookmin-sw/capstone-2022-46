@@ -50,10 +50,9 @@ public class finger : MonoBehaviour
 
     }
 
-    void moveRight()
+    private void OnBecameInvisible()
     {
-      float distanceY = Speed * Time.deltaTime;
-      this.gameObject.transform.Translate(0, -1 * distanceY, 0);
+        gameObject.SetActive(false);
     }
 
     void finger_Rotate(bool is_right)
