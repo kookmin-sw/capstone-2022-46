@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1528380974}
+  score: 0
 --- !u!1 &223737042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1683766111}
+  coin: {fileID: 184024925}
   priceText1: {fileID: 1766099719}
   statText1: {fileID: 675468309}
 --- !u!4 &1949374664
