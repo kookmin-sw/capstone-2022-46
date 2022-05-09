@@ -16,6 +16,7 @@ public class bossSisters : MonoBehaviour
 
     public float maxShotDelay;
     public float curShotDelay;
+    public float fingerDelay;
 
     public GameObject bullet;
     public GameObject itemCoin;
@@ -75,10 +76,11 @@ public class bossSisters : MonoBehaviour
     }
     void Think()
     {
-        FireRight();
+        //FireRight();
         //kickLeft();
         //kickRight();
         //megalodon();
+        finger_S();
 
     }
 
@@ -149,6 +151,43 @@ public class bossSisters : MonoBehaviour
     void megal_R()
     {
       Instantiate(m_b_f_R);
+    }
+
+    //s자 패턴
+    void finger_S()
+    {
+        //float finger_delay = 0.5f;
+        //int num_finger = 10;
+        //GameObject finger = objectManager.MakeObj("bossFinger");
+        //finger.transform.position = transform.position;
+        //Invoke("finger_spawn",1f);
+        StartCoroutine(finger_spawn());
+
+/*
+        while(num_finger>0)
+        {
+            Invoke("finger_spawn",2f);
+            //GameObject finger = objectManager.MakeObj("bossFinger");
+            //finger.transform.position = transform.position;
+            //finger.transform.position = new Vector3(0, 2, 0);
+            Debug.Log(num_finger);
+            num_finger--;
+        }
+*/
+
+    }
+
+     IEnumerator finger_spawn()
+    {
+        for(int i = 0; i < 10 ; i ++)
+        {
+            GameObject finger = objectManager.MakeObj("bossFinger");
+            finger.transform.position = transform.position;
+            yield return new WaitForSeconds(0.2f);  //손가락 이동속도에 따라 달라짐, 절대 시간 써보는거 고려
+        }
+
+
+
     }
 
 

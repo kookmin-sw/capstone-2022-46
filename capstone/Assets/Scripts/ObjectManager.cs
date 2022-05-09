@@ -12,6 +12,9 @@ public class ObjectManager : MonoBehaviour
     public GameObject itemTicketPrefab;
     public GameObject bulletPlayerPrefab;
     public GameObject bulletSistersPrefab;
+    public GameObject penRightPrefab;
+    public GameObject penLeftPrefab;
+    public GameObject bossFingerPrefab;
 
 
     GameObject[] enemy001;
@@ -28,6 +31,10 @@ public class ObjectManager : MonoBehaviour
     GameObject[] bossFoot_L;
     GameObject[] bossFoot_R;
 
+    GameObject[] penRight;
+    GameObject[] penLeft;
+    GameObject[] bossFinger;
+
     GameObject[] targetPool;
     // Start is called before the first frame update
     void Awake()
@@ -43,7 +50,9 @@ public class ObjectManager : MonoBehaviour
         bulletPlayer = new GameObject[20];
         bulletBossSisters = new GameObject[50];
 
-
+        penRight = new GameObject[5];
+        penLeft = new GameObject[5];
+        bossFinger = new GameObject[15];
 
 
         Genarate();
@@ -93,6 +102,24 @@ public class ObjectManager : MonoBehaviour
             bulletBossSisters[index].SetActive(false);
         }
 
+        for (int index = 0; index < penRight.Length; index++)
+        {
+            penRight[index] = Instantiate(penRightPrefab);
+            penRight[index].SetActive(false);
+        }
+
+        for (int index = 0; index < penLeft.Length; index++)
+        {
+            penLeft[index] = Instantiate(penLeftPrefab);
+            penLeft[index].SetActive(false);
+        }
+
+        for (int index = 0; index < bossFinger.Length; index++)
+        {
+            bossFinger[index] = Instantiate(bossFingerPrefab);
+            bossFinger[index].SetActive(false);
+        }
+
 
 
     }
@@ -125,6 +152,18 @@ public class ObjectManager : MonoBehaviour
 
             case "bulletBossSisters":
                 targetPool = bulletBossSisters;
+                break;
+
+            case "penRight":
+                targetPool = penRight;
+                break;
+
+            case "penLeft":
+                targetPool = penLeft;
+                break;
+
+            case "bossFinger":
+                targetPool = bossFinger;
                 break;
 
 
@@ -167,6 +206,18 @@ public class ObjectManager : MonoBehaviour
 
             case "bulletBossSisters":
                 targetPool = bulletBossSisters;
+                break;
+
+            case "penRight":
+                targetPool = penRight;
+                break;
+
+            case "penLeft":
+                targetPool = penLeft;
+                break;
+
+            case "bossFinger":
+                targetPool = bossFinger;
                 break;
 
 

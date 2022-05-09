@@ -552,6 +552,9 @@ MonoBehaviour:
   itemTicketPrefab: {fileID: 4502129316254352192, guid: 6639043fbe1972f4c94fb7d254dc6b39, type: 3}
   bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
   bulletSistersPrefab: {fileID: 4160535500904387944, guid: 540ad09194e2ff942af3361999e34252, type: 3}
+  penRightPrefab: {fileID: 0}
+  penLeftPrefab: {fileID: 0}
+  bossFingerPrefab: {fileID: 0}
 --- !u!4 &713402420
 Transform:
   m_ObjectHideFlags: 0
