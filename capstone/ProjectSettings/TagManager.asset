@@ -22,8 +22,8 @@ TagManager:
   - background
   - player
   - border
-  - 
-  - 
+  - Enemy_layer
+  - playerDamage
   - 
   - 
   - 

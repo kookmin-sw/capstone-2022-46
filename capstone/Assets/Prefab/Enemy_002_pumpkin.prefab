@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9060786725829897343}
   - component: {fileID: 9060786725829897341}
   - component: {fileID: 9060786725829897340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_002_pumpkin
   m_TagString: Enemy
   m_Icon: {fileID: 0}

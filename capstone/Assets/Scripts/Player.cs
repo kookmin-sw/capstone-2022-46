@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
 
     public GameManager gameManager;
     public ObjectManager objectManager;
+
+    public Sprite[] char_sprite;
+    SpriteRenderer spriteRenderer;
     public bool isHit;
 
     void Update()
@@ -31,10 +34,13 @@ public class Player : MonoBehaviour
     }
     private void Awake()
     {
-        
+
         if (PlayerPrefs.HasKey("Power")){
             dmg += PlayerPrefs.GetInt("Power");
         }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
+
     }
     void Fire()
     {
@@ -60,25 +66,7 @@ public class Player : MonoBehaviour
                 break;
         }
     }
-/*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            EnemyBehaviour enemy = enemyAtk.GetComponent<EnemyBehaviour>();
-            health -= enemy.dmg;
-            Debug.Log("적과 플레이어 충돌");
-            enemy.gameObject.SetActive(false);
-            if(health <= 0)
-            {
-                GameManager manager = gameManager.GetComponent<GameManager>();
-                manager.GameOver();
-            }
 
-        }
-
-    }
-*/
 
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -88,7 +76,7 @@ public class Player : MonoBehaviour
             EnemyBehaviour enemy = col.gameObject.GetComponent<EnemyBehaviour>();
             health -= enemy.dmg;
             Debug.Log("적과 플레이어 충돌");
-            //enemyAtk.gameObject.SetActive(false);
+            OnDamaged(col.transform.position);
             if (health <= 0)
             {
                 GameManager manager = gameManager.GetComponent<GameManager>();
@@ -105,6 +93,7 @@ public class Player : MonoBehaviour
           health -= 10; //피 10퍼 감소.
           Debug.Log("팬과 플레이어 충돌");
           //enemyAtk.gameObject.SetActive(false);
+          OnDamaged(col.transform.position);
           if (health <= 0)
           {
               GameManager manager = gameManager.GetComponent<GameManager>();
@@ -119,6 +108,7 @@ public class Player : MonoBehaviour
           health -= health/2; //피 50퍼 감소.
           Debug.Log("다리와 플레이어 충돌");
           //enemyAtk.gameObject.SetActive(false);
+          OnDamaged(col.transform.position);
           if (health <= 0)
           {
               GameManager manager = gameManager.GetComponent<GameManager>();
@@ -127,6 +117,41 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    void OnDamaged(Vector2 targetPos)
+    {
+        gameObject.layer = 10;
+
+        spriteRenderer.sprite = char_sprite[1];  //이미지 바꿈
+
+        spriteRenderer.color = new Color(1, 1, 1, 0.6f);
+
+        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+        StartCoroutine(KnockBack(dirc));
+
+        Invoke("OffDamaged", 0.7f);
+
+    }
+
+    void OffDamaged()
+    {
+        gameObject.layer = 7;
+        spriteRenderer.sprite = char_sprite[0];
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
+
+    IEnumerator KnockBack(float dir)
+    {
+      float ktime = 0;
+      float speed = 4f;
+      while(ktime < 0.2f )
+      {
+          transform.Translate(Vector2.left * speed *Time.deltaTime * -1 * dir);
+          ktime += Time.deltaTime;
+          yield return null;
+      }
+    }
+
 
     private void Move(){
       if(Input.GetKey(KeyCode.UpArrow)){
