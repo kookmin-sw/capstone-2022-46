@@ -29,10 +29,9 @@ public class ShopManager : MonoBehaviour
                 PlayerPrefs.SetInt("Power", PlayerPrefs.GetInt("Power") + 1); // 업그레이드 적용
                 Debug.Log("파워 " + PlayerPrefs.GetInt("Power") + "로 상승");
 
-                
 
             }
-            else Debug.Log("잉크가 부족합니다");
+            
         }
         
 
@@ -43,6 +42,7 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        statText1.text = "공격력 증가(" + PlayerPrefs.GetInt("Price1") + ") (현재 공격력: " + (int)(PlayerPrefs.GetInt("Power") + 10) + ")";//기본공격력 그냥 하드코딩함
+        statText1.text = "공격력 1 증가(" + PlayerPrefs.GetInt("Price1") + ")" +'\n' +  "(현재 공격력: " + (int)(PlayerPrefs.GetInt("Power") + 10) + ")";//기본공격력 그냥 하드코딩함
+       // priceText1.text = "가격: " + PlayerPrefs.GetInt("Price1");
     }
 }
