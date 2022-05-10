@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5802197347581443329}
   - component: {fileID: 2635076964489627052}
   - component: {fileID: 1463477811851676298}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: boss_foot_R
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -143,3 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossFootPrefab: {fileID: 5802197347581443334}
+  animator: {fileID: 0}
+  anim: {fileID: 0}

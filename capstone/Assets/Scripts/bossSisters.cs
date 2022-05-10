@@ -80,7 +80,8 @@ public class bossSisters : MonoBehaviour
         //kickLeft();
         //kickRight();
         //megalodon();
-        finger_S();
+        //finger_S(1);
+        phase_Two();
 
     }
 
@@ -154,39 +155,42 @@ public class bossSisters : MonoBehaviour
     }
 
     //s자 패턴
-    void finger_S()
+    void finger_S(int dir)
     {
-        //float finger_delay = 0.5f;
-        //int num_finger = 10;
-        //GameObject finger = objectManager.MakeObj("bossFinger");
-        //finger.transform.position = transform.position;
-        //Invoke("finger_spawn",1f);
-        StartCoroutine(finger_spawn());
-
-/*
-        while(num_finger>0)
-        {
-            Invoke("finger_spawn",2f);
-            //GameObject finger = objectManager.MakeObj("bossFinger");
-            //finger.transform.position = transform.position;
-            //finger.transform.position = new Vector3(0, 2, 0);
-            Debug.Log(num_finger);
-            num_finger--;
-        }
-*/
-
+        float x_dir ;
+        if(dir == 0){x_dir = Random.Range(0f, 1.5f); } //0이면 오른쪽
+        else{ x_dir = Random.Range(-3f, -1f); }
+        StartCoroutine(finger_spawn(x_dir));
     }
 
-     IEnumerator finger_spawn()
+     IEnumerator finger_spawn(float x_dir)
     {
         for(int i = 0; i < 10 ; i ++)
         {
             GameObject finger = objectManager.MakeObj("bossFinger");
-            finger.transform.position = transform.position;
+            finger.transform.position = new Vector3(x_dir, 2.5f, 0);
+            //finger.transform.position = transform.position;
             yield return new WaitForSeconds(0.2f);  //손가락 이동속도에 따라 달라짐, 절대 시간 써보는거 고려
         }
 
+    }
 
+//발이랑 손가락 두개나옴
+    void phase_Two()
+    {
+        int dir = Random.Range(0, 2); //0이면 왼쪽, 1이면 오른쪽으로
+
+        if(dir == 0)  //왼쪽발 나오고, 오른쪽 탄막공격
+        {
+            kickLeft();
+            finger_S(dir);
+
+        }
+        else
+        {
+            kickRight();
+            finger_S(dir);
+        }
 
     }
 

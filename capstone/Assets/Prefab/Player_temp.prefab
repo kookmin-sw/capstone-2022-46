@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6590643188225147348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17, y: -3.93, z: -0.103212796}
-  m_LocalScale: {x: 3.4439, y: 3.710517, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   maxShotDelay: 0.15
   curShotDelay: 0
   score: 0
-  money: 0
+  ink: 0
   ring: 0
   ticket: 0
   enemyAtk: {fileID: 0}
