@@ -20,17 +20,17 @@ public class shoes : MonoBehaviour {
     //객체와 충돌할 경우.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      Player playerLogic = player.GetComponent<Player>();
+      //Player playerLogic = player.GetComponent<Player>();
 
       if (collision.CompareTag("Enemy"))
       {
         Debug.Log("적 기체와 충돌");
         gameObject.SetActive(false);
 
-        if(playerLogic.is_fragile == true)
-        {
-            shootFragile();
-        }
+        //if(playerLogic.is_fragile == true)
+        //{
+        //    shootFragile();
+        //}
 
       }
     }
