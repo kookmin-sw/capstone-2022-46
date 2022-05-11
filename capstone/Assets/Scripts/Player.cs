@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     public int score;
     public int ink;
     public int ring;
-    public bool ticket = false;
 
     public GameObject enemyAtk;
     public GameObject bullet;
@@ -114,6 +113,11 @@ public class Player : MonoBehaviour
               GameManager manager = gameManager.GetComponent<GameManager>();
               manager.GameOver();
           }
+        }
+        if (col.gameObject.tag == "Ticket")
+        {
+            GameManager manager = gameManager.GetComponent<GameManager>();
+            manager.shopSet.SetActive(true);
         }
 
     }

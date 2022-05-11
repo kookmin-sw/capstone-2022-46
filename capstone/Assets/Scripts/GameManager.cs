@@ -69,14 +69,14 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetButtonDown("Cancel")) // 메뉴 조작
         {
-            if (menuSet.activeSelf && shopSet.activeSelf)
+            if (shopSet.activeSelf)
                 shopSet.SetActive(false);
             else if (menuSet.activeSelf)
                 menuSet.SetActive(false);
             else menuSet.SetActive(true);
         }
 
-        if (menuSet.activeSelf) // 메뉴 실행시 게임 일시정지
+        if (menuSet.activeSelf || shopSet.activeSelf) // 메뉴 실행시 게임 일시정지
             Time.timeScale = 0f;
         else Time.timeScale = 1f;
 
@@ -102,7 +102,6 @@ public class GameManager : MonoBehaviour
             case "enemy002":
                 enemyIndex = 1;
                 break;
-
         }
         int enemyPoint = spawnList[spawnIndex].point;
         GameObject enemy = objectManager.MakeObj(enemyObjs[enemyIndex]);
@@ -113,7 +112,7 @@ public class GameManager : MonoBehaviour
         enemyLogic.player = player;
         enemyLogic.objectManager = objectManager;
 
-        spawnIndex++;
+        spawnIndex++;//이거때문에 오류 나긴하는데 스테이지에서 과하게 소환 안하면 괜찮을듯
         if(spawnIndex == spawnList.Count)
         {
             spawnEnd = true;

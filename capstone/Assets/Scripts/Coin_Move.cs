@@ -30,7 +30,7 @@ public class Coin_Move : MonoBehaviour
     {
         if (col.gameObject.tag == "Player" )
         {
-            GoldState.instance.AddScore(50);
+            GoldState.instance.AddScore(1);
             gameObject.SetActive(false);
         }
     }

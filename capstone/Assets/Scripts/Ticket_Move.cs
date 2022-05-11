@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Ticket_Move : MonoBehaviour
 {
-  public float Speed;
+    public float Speed;
+    public GameObject shopSet;
+    
 
-
-  // Start is called before the first frame update
-  void Start()
+    // Start is called before the first frame update
+    void Start()
   {
 
   }
@@ -27,18 +29,18 @@ public class Ticket_Move : MonoBehaviour
 
   void OnBecameInvisible()
   {
-      //gameObject.SetActive(false);
-      Destroy(gameObject);
+      gameObject.SetActive(false);
   }
 
   private void OnTriggerEnter2D(Collider2D col) //적과 충돌
   {
-      //Player playerLogic = player.GetComponent<Player>();
+      
       if (col.gameObject.tag == "Player")
       {
-          Destroy(gameObject);
-          // 상점 관련 코드 추가해야함.
-      }
+            //shopSet.SetActive(true);
+            gameObject.SetActive(false);
+                
+        }
 
   }
 }

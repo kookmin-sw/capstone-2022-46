@@ -118,10 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: enemy002
-  enemyScore: 0
-  coinDrop: 100
-  ringDrop: 0
-  ticketDrop: 0
+  ticketDrop: 1
   maxHP: 40
   health: 0
   Speed: 2
