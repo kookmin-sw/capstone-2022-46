@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public static float health = 100;
     public float Speed = 3f;
     public float dmg;
+    public float dmg_F;
     public int maxPower;
     public int power;
     public float maxShotDelay;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public int ink;
     public int ring;
     public bool ticket = false;
+    public bool is_fragile = false;
 
     public GameObject enemyAtk;
     public GameObject bullet;
@@ -143,7 +145,7 @@ public class Player : MonoBehaviour
     IEnumerator KnockBack(float dir)
     {
       float ktime = 0;
-      float speed = 4f;
+      float speed = 6f;
       while(ktime < 0.2f )
       {
           transform.Translate(Vector2.left * speed *Time.deltaTime * -1 * dir);
