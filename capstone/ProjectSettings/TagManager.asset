@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - Pen
   - finger
+  - Ticket
   layers:
   - Default
   - TransparentFX

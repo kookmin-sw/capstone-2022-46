@@ -41,13 +41,13 @@ public class ObjectManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enemy001 = new GameObject[10];
+        enemy001 = new GameObject[20];
         enemy002 = new GameObject[10];
         bossSisters = new GameObject[1];
 
         itemCoin = new GameObject[10];
         itemRing = new GameObject[3];
-        //itemTicket = new GameObject[1];
+        itemTicket = new GameObject[1];
         itemInk = new GameObject[3];
 
         bulletPlayer = new GameObject[20];
@@ -91,6 +91,12 @@ public class ObjectManager : MonoBehaviour
         {
             itemRing[index] = Instantiate(itemRingPrefab);
             itemRing[index].SetActive(false);
+        }
+
+        for (int index = 0; index < itemTicket.Length; index++)
+        {
+            itemTicket[index] = Instantiate(itemTicketPrefab);
+            itemTicket[index].SetActive(false);
         }
 
         for (int index = 0; index < itemInk.Length; index++)
@@ -155,8 +161,11 @@ public class ObjectManager : MonoBehaviour
             case "itemRing":
                 targetPool = itemRing;
                 break;
+            case "itemTicket":
+                targetPool = itemTicket;
+                break;
             case "itemInk":
-                targetPool = itemRing;
+                targetPool = itemInk;
                 break;
             case "bulletPlayer":
                 targetPool = bulletPlayer;
@@ -212,8 +221,11 @@ public class ObjectManager : MonoBehaviour
             case "itemRing":
                 targetPool = itemRing;
                 break;
+            case "itemTicket":
+                targetPool = itemTicket;
+                break;
             case "itemInk":
-                targetPool = itemRing;
+                targetPool = itemInk;
                 break;
             case "bulletPlayer":
                 targetPool = bulletPlayer;

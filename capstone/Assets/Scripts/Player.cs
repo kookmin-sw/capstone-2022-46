@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public int score;
     public int ink;
     public int ring;
-    public bool ticket = false;
+
     public bool is_fragile = false;
 
     public GameObject enemyAtk;
@@ -116,6 +116,11 @@ public class Player : MonoBehaviour
               GameManager manager = gameManager.GetComponent<GameManager>();
               manager.GameOver();
           }
+        }
+        if (col.gameObject.tag == "Ticket")
+        {
+            GameManager manager = gameManager.GetComponent<GameManager>();
+            manager.shopSet.SetActive(true);
         }
 
     }

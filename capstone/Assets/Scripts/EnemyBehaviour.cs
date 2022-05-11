@@ -5,10 +5,8 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public string enemyName;
-    public int enemyScore;
-    public int coinDrop;
-    public int ringDrop;
-    public int ticketDrop;
+    //public int enemyScore;
+    public int ticketDrop = 1;
     public float maxHP;
     public float health;
     public float Speed;
@@ -89,7 +87,7 @@ public class EnemyBehaviour : MonoBehaviour
     void FireRight()
     {
         int bulletNum = 20;
-        for(int index = 0; index < bulletNum; index++)
+        for (int index = 0; index < bulletNum; index++)
         {
             Debug.Log(index);
             GameObject bullet = objectManager.MakeObj("bulletBossSisters");
@@ -106,20 +104,20 @@ public class EnemyBehaviour : MonoBehaviour
 
         curPatternCount++;
 
-/*
-        if(curPatternCount < maxPatternCount[patternIndex])
-            Invoke("FireRight", 0.3f); // 재시전
-        else
-            Invoke("Think", 3); // 다음 패턴으로
+        /*
+                if(curPatternCount < maxPatternCount[patternIndex])
+                    Invoke("FireRight", 0.3f); // 재시전
+                else
+                    Invoke("Think", 3); // 다음 패턴으로
 
-  */
+          */
     }
     void PunchLeft()
     {
         Debug.Log("왼쪽 때리기.");
         curPatternCount++;
         //구현 아직 안함. 스프라이트가 필요
-        if(curPatternCount < maxPatternCount[patternIndex])
+        if (curPatternCount < maxPatternCount[patternIndex])
             Invoke("PunchLeft", 4); // 재시전
         else
             Invoke("Think", 3f); // 다음 패턴으로
@@ -145,7 +143,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else if (col.gameObject.tag == "Bullet")
         {
-          Debug.Log("잡몹 받는 데미지 : " + playerLogic.dmg);
+            Debug.Log("잡몹 받는 데미지 : " + playerLogic.dmg);
             onHit(playerLogic.dmg);
         }
 
@@ -158,49 +156,45 @@ public class EnemyBehaviour : MonoBehaviour
 
     void onHit(float dmg)
     {
-        if (health <= 0)
-            return;
-
+        
         health -= dmg;
-        //데미지 받은 스프라이트(색깔만 점멸해도 됨)
-      /*  if(enemyName == "bossSisters")
-        {
-            anim.SetTrigger("OnHit"); // 보스 피격시 애니메이션 출력
-        }
-        else
-        {
-            spriteRenderer.sprite = sprites[1];
-            Invoke("ReturnSprite", 0.1f);
-        }*/
-
+        Debug.Log("현재 체력: " + health);
         if (health <= 0)
         {
-            Player playerLogic = player.GetComponent<Player>();
-            playerLogic.score += enemyScore;
-            int ran = enemyName == "bossSisters" ? 0 : Random.Range(0, 100);//퍼센테이지로 표기
+            //   Player playerLogic = player.GetComponent<Player>();
+            // playerLogic.score += enemyScore;
+
+            int ran = Random.Range(0, 100);//퍼센테이지로 표기 0~100 무언가
             if (ran < ticketDrop)
             {
+
                 GameObject itemTicket = objectManager.MakeObj("itemTicket");
-                itemTicket.transform.position = transform.position;
-            }
-            else if (ran < ticketDrop + ringDrop)
-            {
-                GameObject itemRing = objectManager.MakeObj("itemRing");
-                itemRing.transform.position = transform.position;
+                if (itemTicket != null)
+                {
+                    itemTicket.transform.position = transform.position;
+                }
+                else
+                {
+                    GameObject itemCoin = objectManager.MakeObj("itemCoin");
+                    itemCoin.transform.position = transform.position;
+                }
             }
             else
             {
                 GameObject itemCoin = objectManager.MakeObj("itemCoin");
                 itemCoin.transform.position = transform.position;
             }
-            Debug.Log("적 체력 000000");
-            gameObject.SetActive(false);
+
+                Debug.Log("적 체력 000000");
+                gameObject.SetActive(false);
+            }
         }
+
+        void ReturnSprite()
+        {
+            spriteRenderer.sprite = sprites[0];
+        }
+
+
     }
 
-    void ReturnSprite(){
-      spriteRenderer.sprite = sprites[0];
-    }
-
-
-}

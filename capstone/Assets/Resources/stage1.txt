@@ -1,3 +1,4 @@
+0.1,enemy001, 2
 2,enemy001,4
 3,enemy002,10
 1,enemy001,4
