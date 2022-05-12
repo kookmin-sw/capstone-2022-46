@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
         Move();
         curShotDelay += Time.deltaTime;
         Fire();
+
+
     }
     private void Awake()
     {
@@ -79,12 +81,13 @@ public class Player : MonoBehaviour
             health -= enemy.dmg;
             Debug.Log("적과 플레이어 충돌");
             OnDamaged(col.transform.position);
+            /*
             if (health <= 0)
             {
                 GameManager manager = gameManager.GetComponent<GameManager>();
                 manager.GameOver();
             }
-
+            */
             //gameObject.SetActive(false);
 
         }
@@ -96,11 +99,15 @@ public class Player : MonoBehaviour
           Debug.Log("팬과 플레이어 충돌");
           //enemyAtk.gameObject.SetActive(false);
           OnDamaged(col.transform.position);
+
+          /*
           if (health <= 0)
           {
+
               GameManager manager = gameManager.GetComponent<GameManager>();
               manager.GameOver();
           }
+          */
         }
 
         //보스 발바닥 부분 Test
@@ -111,12 +118,17 @@ public class Player : MonoBehaviour
           Debug.Log("다리와 플레이어 충돌");
           //enemyAtk.gameObject.SetActive(false);
           OnDamaged(col.transform.position);
+          /*
           if (health <= 0)
           {
+
               GameManager manager = gameManager.GetComponent<GameManager>();
               manager.GameOver();
           }
+          */
         }
+
+
         if (col.gameObject.tag == "Ticket")
         {
             GameManager manager = gameManager.GetComponent<GameManager>();

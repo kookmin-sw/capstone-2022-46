@@ -25,17 +25,22 @@ public class GameManager : MonoBehaviour
     public List<Spawn> spawnList;
     public int spawnIndex;
     public bool spawnEnd;
-    
+
+  //  public Animator playerDead;
+    public GameObject dead;
+
 
     private void Awake()
     {
         GameLoad();
-        
+
         spawnList = new List<Spawn>();
         enemyObjs = new string[]{"enemy001", "enemy002"};
         ReadSpawnFile();
         //SpawnBoss();
         Invoke("SpawnBoss",bossSpawnDelay);
+
+        //playerDead = player.GetComponent<Animator>();
     }
     void ReadSpawnFile()
     {
@@ -87,6 +92,16 @@ public class GameManager : MonoBehaviour
             curSpawnDelay = 0;
         } //스폰
         Player playerLogic = player.GetComponent<Player>();
+
+
+        // 게임종료 체크 (플레이어 체력으로)
+        if(Player.health <= 0 )
+        {
+            Time.timeScale = 0.0f;
+            GameOver();
+
+
+        }
         //에러나서 잠깐지움.
       //  scoreText.text = string.Format("{0:n0}", playerLogic.score);
     }
@@ -151,7 +166,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverSet.SetActive(true);
+        dead.SetActive(true); //애니메이션 활성
+        dead.transform.position = player.transform.position;  //위치잡아줌
+        player.SetActive(false);  //플레이어 겹쳐서 안보이게함
+
+        //여기에 gameover텍스트랑 씬 이동 구현 하면댐.
+
+
     }
 
     public void GameRetry()
@@ -166,5 +187,10 @@ public class GameManager : MonoBehaviour
     {
         GameSave();
         Application.Quit();
+    }
+
+    void Pause()
+    {
+        Time.timeScale = 0f;
     }
 }
