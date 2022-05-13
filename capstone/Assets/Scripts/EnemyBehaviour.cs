@@ -30,6 +30,7 @@ public class EnemyBehaviour : MonoBehaviour
     public int curPatternCount;
     public int[] maxPatternCount;
 
+    Vector3 dirVec;
 
     void Awake()
     {
@@ -38,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
             anim = GetComponent<Animator>();
     }
 
+    
 
     void OnEnable()
     {
@@ -123,10 +125,24 @@ public class EnemyBehaviour : MonoBehaviour
             Invoke("Think", 3f); // 다음 패턴으로
     }
 
+    private void Start()
+    {
+        if (enemyName == "enemy001")
+        {
+            Player playerData = player.GetComponent<Player>();
+            dirVec = playerData.transform.position - transform.position;
+            float angle = Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
+        }
+    }
+
+
     void Update()
     {
         if (enemyName == "enemy001")
             moveControl();
+        else if(enemyName == "enemy003")
+            transform.Rotate(dirVec);
         else simpleMove();
     }
 
@@ -137,7 +153,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void moveControl()
     {
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, Speed / 300);
+        transform.position = transform.position + dirVec.normalized * Speed * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
