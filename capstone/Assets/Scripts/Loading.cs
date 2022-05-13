@@ -20,6 +20,7 @@ public class Loading : MonoBehaviour
   {
       nextScene = sceneName;
       SceneManager.LoadScene("Loading");
+      Application.Quit();
   }
 
 

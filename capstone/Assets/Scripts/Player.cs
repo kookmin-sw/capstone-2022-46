@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // 싱글턴
+    //public static Player Instance ;
+
     public static float health = 100;
     public float Speed = 3f;
     public float dmg;
@@ -45,7 +48,27 @@ public class Player : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
 
+        health = 100;
+
+
+      //  DontDestroyOnLoad(gameObject);
+
+
+        var obj = FindObjectsOfType<Player>();
+
+        if (obj.Length == 1)
+        {
+          DontDestroyOnLoad(gameObject);
+
+        }
+        else{Destroy(gameObject);}
+
+
+
+
     }
+
+
     void Fire()
     {
         if (!Input.GetKey(KeyCode.Space))

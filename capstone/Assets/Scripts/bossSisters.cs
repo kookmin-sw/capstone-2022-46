@@ -213,7 +213,7 @@ public class bossSisters : MonoBehaviour
         }
         else if(col.gameObject.tag == "Player")
         {
-          gameObject.SetActive(false);
+          //gameObject.SetActive(false);
         }
 
     }

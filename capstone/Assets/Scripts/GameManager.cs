@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
 
   //  public Animator playerDead;
     public GameObject dead;
-
+    public GameObject gameOverImg;
+    //private GameObject playerData;
 
     private void Awake()
     {
@@ -41,6 +42,9 @@ public class GameManager : MonoBehaviour
         Invoke("SpawnBoss",bossSpawnDelay);
 
         //playerDead = player.GetComponent<Animator>();
+        //playerData = GameObject.Find("Player");
+
+
     }
     void ReadSpawnFile()
     {
@@ -91,7 +95,11 @@ public class GameManager : MonoBehaviour
             SpawnEnemy();
             curSpawnDelay = 0;
         } //스폰
+
+
         Player playerLogic = player.GetComponent<Player>();
+        //Player playerLogic = FindObjectOfType<Player>();
+        //GameOb playerLogic = gameObject.Find("Player");
 
 
         // 게임종료 체크 (플레이어 체력으로)
@@ -147,6 +155,7 @@ public class GameManager : MonoBehaviour
     public void GameSave()
     {
         Player playerData = player.GetComponent<Player>();
+
         PlayerPrefs.SetInt("InkBottle", playerData.ink);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
         PlayerPrefs.Save();
     }
@@ -160,8 +169,9 @@ public class GameManager : MonoBehaviour
         player.transform.position = Vector3.down * 3.5f;
         player.SetActive(true);
 
-        Player playerLogic = player.GetComponent<Player>();
-        playerLogic.isHit = false;
+        Player playerData = player.GetComponent<Player>();
+        //GameObject playerData = GameObject.Find("Player");
+        playerData.isHit = false;
     }
 
     public void GameOver()
@@ -170,10 +180,34 @@ public class GameManager : MonoBehaviour
         dead.transform.position = player.transform.position;  //위치잡아줌
         player.SetActive(false);  //플레이어 겹쳐서 안보이게함
 
-        //여기에 gameover텍스트랑 씬 이동 구현 하면댐.
 
+        //여기에 gameover텍스트랑 씬 이동 구현 하면댐.
+        gameOverImg.SetActive(true);
+        StartCoroutine(goGameOverScene());
+        //Loading.LoadScene("Game_Lobby");
 
     }
+
+    IEnumerator goGameOverScene()
+    {
+        yield return new WaitForSecondsRealtime(4.0f);
+        //Loading.LoadScene("Game_Lobby");
+
+         Time.timeScale = 1f;
+         //MainGameReset();
+         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+    void MainGameReset()
+    {
+        dead.SetActive(false);
+        player.SetActive(true);
+        gameOverImg.SetActive(false);
+    }
+
+
+
 
     public void GameRetry()
     {
