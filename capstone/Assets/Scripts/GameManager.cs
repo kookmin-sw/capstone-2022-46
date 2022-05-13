@@ -75,6 +75,12 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        //메인 게임 들어오면 플레이어 활성화.
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+         {
+             Player.instance.checkMainGame();
+         }
+
 
         if (Input.GetButtonDown("Cancel")) // 메뉴 조작
         {
@@ -97,7 +103,7 @@ public class GameManager : MonoBehaviour
         } //스폰
 
 
-        Player playerLogic = player.GetComponent<Player>();
+        //Player playerLogic = player.GetComponent<Player>();
         //Player playerLogic = FindObjectOfType<Player>();
         //GameOb playerLogic = gameObject.Find("Player");
 
@@ -154,9 +160,10 @@ public class GameManager : MonoBehaviour
 
     public void GameSave()
     {
-        Player playerData = player.GetComponent<Player>();
+        //Player playerData = player.GetComponent<Player>();
 
-        PlayerPrefs.SetInt("InkBottle", playerData.ink);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
+        //PlayerPrefs.SetInt("InkBottle", playerData.ink);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
+        PlayerPrefs.SetInt("InkBottle", Player.instance.ink);
         PlayerPrefs.Save();
     }
     public void GameLoad()
@@ -169,16 +176,19 @@ public class GameManager : MonoBehaviour
         player.transform.position = Vector3.down * 3.5f;
         player.SetActive(true);
 
-        Player playerData = player.GetComponent<Player>();
-        //GameObject playerData = GameObject.Find("Player");
-        playerData.isHit = false;
+        //Player playerData = player.GetComponent<Player>();
+
+        //playerData.isHit = false;
+        Player.instance.isHit = false;
+
     }
 
     public void GameOver()
     {
         dead.SetActive(true); //애니메이션 활성
-        dead.transform.position = player.transform.position;  //위치잡아줌
-        player.SetActive(false);  //플레이어 겹쳐서 안보이게함
+        dead.transform.position = Player.instance.transform.position;  //위치잡아줌
+        //player.SetActive(false);  //플레이어 겹쳐서 안보이게함
+        Player.instance.spriteRenderer.color = new Color(1, 1, 1, 0f);
 
 
         //여기에 gameover텍스트랑 씬 이동 구현 하면댐.
@@ -195,15 +205,21 @@ public class GameManager : MonoBehaviour
 
          Time.timeScale = 1f;
          //MainGameReset();
-         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         Player.health = 100;
+         Player.instance.transform.position = new Vector3(0, -4, 0);
+         Loading.LoadScene("Game_Lobby");
 
     }
 
     void MainGameReset()
     {
         dead.SetActive(false);
-        player.SetActive(true);
+        //player.SetActive(true);
         gameOverImg.SetActive(false);
+
+        Player.health = 100;
+        //Player.instance.transform.position = new Vector3(0, -4, 0);
     }
 
 

@@ -20,7 +20,9 @@ public class Loading : MonoBehaviour
   {
       nextScene = sceneName;
       SceneManager.LoadScene("Loading");
-      Application.Quit();
+
+      //Player.instance.spriteRenderer.color = new Color(1, 1, 1, 0f);
+      //Application.Quit();
   }
 
 

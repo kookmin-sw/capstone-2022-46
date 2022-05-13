@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
     // 싱글턴
-    //public static Player Instance ;
+    public static Player instance = null;
 
     public static float health = 100;
     public float Speed = 3f;
@@ -28,14 +30,22 @@ public class Player : MonoBehaviour
     public ObjectManager objectManager;
 
     public Sprite[] char_sprite;
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     public bool isHit;
+    public bool isMaingame;
 
     void Update()
     {
         Move();
         curShotDelay += Time.deltaTime;
         Fire();
+
+        if (SceneManager.GetActiveScene().buildIndex != 3)
+         {
+             gameObject.SetActive(false);
+             isMaingame = false;
+         }
+
 
 
     }
@@ -48,12 +58,16 @@ public class Player : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
 
+        this.transform.position = new Vector3(0, -4, 0);
+
         health = 100;
+
+        //this.spriteRenderer.color = new Color(1, 1, 1, 1f);
 
 
       //  DontDestroyOnLoad(gameObject);
 
-
+/*
         var obj = FindObjectsOfType<Player>();
 
         if (obj.Length == 1)
@@ -62,7 +76,17 @@ public class Player : MonoBehaviour
 
         }
         else{Destroy(gameObject);}
-
+*/
+        if (instance == null) //instance가 null. 즉, 시스템상에 존재하고 있지 않을때
+        {
+            instance = this; //내자신을 instance로 넣어줍니다.
+            DontDestroyOnLoad(gameObject); //OnLoad(씬이 로드 되었을때) 자신을 파괴하지 않고 유지
+        }
+        else
+        {
+            if (instance != this) //instance가 내가 아니라면 이미 instance가 하나 존재하고 있다는 의미
+              Destroy(this.gameObject); //둘 이상 존재하면 안되는 객체이니 방금 AWake된 자신을 삭제
+        }
 
 
 
@@ -193,6 +217,20 @@ public class Player : MonoBehaviour
           yield return null;
       }
     }
+
+    public void checkMainGame()
+    {
+
+        if(gameObject.activeSelf == false)
+        {
+            gameObject.SetActive(true);
+
+        }
+        //gameObject.SetActive(true);
+        //this.transform.position = new Vector3(0, -4, 0);
+    }
+
+
 
 
     private void Move(){

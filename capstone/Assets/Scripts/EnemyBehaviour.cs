@@ -39,7 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
             anim = GetComponent<Animator>();
     }
 
-    
+
 
     void OnEnable()
     {
@@ -129,8 +129,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (enemyName == "enemy001")
         {
-            Player playerData = player.GetComponent<Player>();
-            dirVec = playerData.transform.position - transform.position;
+            //Player playerData = player.GetComponent<Player>();
+            //dirVec = playerData.transform.position - transform.position;
+            dirVec = Player.instance.transform.position - transform.position;
             float angle = Mathf.Atan2(dirVec.y, dirVec.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.forward);
         }
@@ -158,15 +159,17 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
     {
-        Player playerLogic = player.GetComponent<Player>();
+        //Player playerLogic = player.GetComponent<Player>();
         if (col.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);
         }
         else if (col.gameObject.tag == "Bullet")
         {
-            Debug.Log("잡몹 받는 데미지 : " + playerLogic.dmg);
-            onHit(playerLogic.dmg);
+            //Debug.Log("잡몹 받는 데미지 : " + playerLogic.dmg);
+            Debug.Log("잡몹 받는 데미지 : " + Player.instance.dmg);
+            //onHit(playerLogic.dmg);
+            onHit(Player.instance.dmg);
         }
 
     }
@@ -178,7 +181,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     void onHit(float dmg)
     {
-        
+
         health -= dmg;
         Debug.Log("현재 체력: " + health);
         if (health <= 0)
@@ -219,4 +222,3 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     }
-
