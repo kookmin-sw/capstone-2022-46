@@ -125,13 +125,19 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Update()
     {
-        moveControl();
+        if (enemyName == "enemy001")
+            moveControl();
+        else simpleMove();
     }
 
-    void moveControl()
+    void simpleMove()
     {
         float distanceY = Speed * Time.deltaTime;
         this.gameObject.transform.Translate(0, -1 * distanceY, 0);
+    }
+    void moveControl()
+    {
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, Speed / 300);
     }
 
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
