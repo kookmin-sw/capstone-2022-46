@@ -208,7 +208,11 @@ public class GameManager : MonoBehaviour
          //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
          Player.health = 100;
          Player.instance.transform.position = new Vector3(0, -4, 0);
+         //Player.instance.maxShotDelay = 0.15f;
+         //Player.instance.gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
          Loading.LoadScene("Game_Lobby");
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
