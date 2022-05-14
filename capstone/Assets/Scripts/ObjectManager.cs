@@ -48,7 +48,7 @@ public class ObjectManager : MonoBehaviour
         itemCoin = new GameObject[10];
         itemRing = new GameObject[3];
         itemTicket = new GameObject[1];
-        itemInk = new GameObject[3];
+        itemInk = new GameObject[1];
 
         bulletPlayer = new GameObject[20];
         bulletBossSisters = new GameObject[50];
@@ -101,7 +101,7 @@ public class ObjectManager : MonoBehaviour
 
         for (int index = 0; index < itemInk.Length; index++)
         {
-            itemInk[index] = Instantiate(itemRingPrefab);
+            itemInk[index] = Instantiate(itemInkPrefab);
             itemInk[index].SetActive(false);
         }
 

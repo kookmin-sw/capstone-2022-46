@@ -7,6 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
     public string enemyName;
     //public int enemyScore;
     public int ticketDrop = 1;
+    public int inkDrop = 1;
     public float maxHP;
     public float health;
     public float Speed;
@@ -17,7 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public GameObject bullet;
     public GameObject itemCoin;
-    public GameObject itemRing;
+    public GameObject itemInk;
     public GameObject itemTicket;
     public GameObject player;
     public ObjectManager objectManager;
@@ -197,6 +198,19 @@ public class EnemyBehaviour : MonoBehaviour
                 if (itemTicket != null)
                 {
                     itemTicket.transform.position = transform.position;
+                }
+                else
+                {
+                    GameObject itemCoin = objectManager.MakeObj("itemCoin");
+                    itemCoin.transform.position = transform.position;
+                }
+            }
+            else if (ran < ticketDrop + inkDrop)
+            {
+                GameObject itemInk = objectManager.MakeObj("itemInk");
+                if (itemInk != null)
+                {
+                    itemInk.transform.position = transform.position;
                 }
                 else
                 {
