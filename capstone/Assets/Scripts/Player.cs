@@ -55,6 +55,15 @@ public class Player : MonoBehaviour
         if (PlayerPrefs.HasKey("Power")){
             dmg += PlayerPrefs.GetInt("Power");
         }
+        if (PlayerPrefs.HasKey("Speed"))
+        {
+            Speed += PlayerPrefs.GetInt("Speed") / 10;
+        }
+        if (PlayerPrefs.HasKey("AtkSpd"))
+        {
+            for(int i = 0; i< PlayerPrefs.GetInt("AtkSpd"); i++)
+                maxShotDelay *= 9/10;
+        }
 
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
 
