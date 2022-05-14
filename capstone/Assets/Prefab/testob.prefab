@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2986774938433015587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2986774938433015585}
+  - component: {fileID: 2986774938433015586}
+  m_Layer: 0
+  m_Name: testob
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2986774938433015585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986774938433015587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.016991153, y: -0.20160796, z: -0.103212796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2986774938433015586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986774938433015587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14e33924f386de409221d303405ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy001Prefab: {fileID: 8169637492296214450, guid: 189d5b989422e40418bba0e6deee0b45, type: 3}
+  enemy002Prefab: {fileID: 9060786725829897331, guid: edeb538ea1e73774f8b967f69b1810ee, type: 3}
+  bossSistersPrefab: {fileID: 8363605380323164418, guid: fcd6f38de89fd91448e5257094fbfa42, type: 3}
+  itemCoinPrefab: {fileID: 8823030452686700451, guid: 9262a077b3ee94d48b33a87261ef4173, type: 3}
+  itemRingPrefab: {fileID: 6466664685848868856, guid: 7ed2999751198db4cb86739ca411ecc3, type: 3}
+  itemTicketPrefab: {fileID: 5278965144337621317, guid: 53b06bf0627846041b8974235508e34c, type: 3}
+  itemInkPrefab: {fileID: 6580572350257389201, guid: 95ae4bb90a0520c45ad616fe14bfb8b8, type: 3}
+  bulletPlayerPrefab: {fileID: 3744030017563382575, guid: f39212e0472cd6847b3803c920997710, type: 3}
+  bulletSistersPrefab: {fileID: 4160535500904387944, guid: 540ad09194e2ff942af3361999e34252, type: 3}
+  penRightPrefab: {fileID: 4977700710941359773, guid: 06a8a4714de70ed4ca42a28a83860f7a, type: 3}
+  penLeftPrefab: {fileID: 3267924660002029895, guid: f49ac89d1727a8140af79649d311db72, type: 3}
+  bossFingerPrefab: {fileID: 5639557637024494732, guid: 528533a46e3940244ae7ca8115e80cb9, type: 3}

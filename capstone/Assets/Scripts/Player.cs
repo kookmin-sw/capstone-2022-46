@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
 
     public GameManager gameManager;
     public ObjectManager objectManager;
+    public GameObject testob;
+
 
     public Sprite[] char_sprite;
     public SpriteRenderer spriteRenderer;
@@ -51,6 +53,9 @@ public class Player : MonoBehaviour
     }
     private void Awake()
     {
+        //objectManager = GameObject.Find("ObjectManager");
+        //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //objectManager = testob.GetComponent<ObjectManager>();
 
         if (PlayerPrefs.HasKey("Power")){
             dmg += PlayerPrefs.GetInt("Power");
@@ -105,8 +110,12 @@ public class Player : MonoBehaviour
         switch (power)
         {
             case 1:
-                GameObject bullet = objectManager.MakeObj("bulletPlayer");
+                Debug.Log("지금 1 ");
+                //GameObject bullet = objectManager.MakeObj("bulletPlayer");
+                GameObject bullet = GameObject.Find("ObjectManager").GetComponent<ObjectManager>().MakeObj("bulletPlayer");
+                Debug.Log("지금 2 ");
                 bullet.transform.position = transform.position;
+                Debug.Log("지금 3 ");
                 curShotDelay = 0;
                 break;
             case 2:// 파워업 상태
