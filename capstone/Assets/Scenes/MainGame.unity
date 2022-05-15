@@ -3405,6 +3405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy001Prefab: {fileID: 8169637492296214450, guid: 189d5b989422e40418bba0e6deee0b45, type: 3}
   enemy002Prefab: {fileID: 9060786725829897331, guid: edeb538ea1e73774f8b967f69b1810ee, type: 3}
+  enemy003Prefab: {fileID: 158674149604048296, guid: 15c5b3ddbc82ad1428807b6be264299f, type: 3}
   bossSistersPrefab: {fileID: 8363605380323164418, guid: fcd6f38de89fd91448e5257094fbfa42, type: 3}
   itemCoinPrefab: {fileID: 8823030452686700451, guid: 9262a077b3ee94d48b33a87261ef4173, type: 3}
   itemRingPrefab: {fileID: 6466664685848868856, guid: 7ed2999751198db4cb86739ca411ecc3, type: 3}
@@ -4245,7 +4246,7 @@ PrefabInstance:
       objectReference: {fileID: 332134194}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: maxShotDelay
-      value: 0.15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: objectManager

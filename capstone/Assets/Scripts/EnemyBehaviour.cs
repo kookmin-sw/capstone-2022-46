@@ -52,6 +52,9 @@ public class EnemyBehaviour : MonoBehaviour
             case "enemy002":
                 health = 40;
                 break;
+            case "enemy003":
+                health = 10;
+                break;
 
                 /*
             case "bossSisters":
@@ -143,9 +146,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (enemyName == "enemy001")
             moveControl();
-        else if(enemyName == "enemy003")
-            transform.Rotate(dirVec);
+        else if (enemyName == "enemy003")
+            fly();
         else simpleMove();
+        
     }
 
     void simpleMove()
@@ -157,7 +161,12 @@ public class EnemyBehaviour : MonoBehaviour
     {
         transform.position = transform.position + dirVec.normalized * Speed * Time.deltaTime;
     }
-
+    void fly()
+    {
+        Player playerData = player.GetComponent<Player>();
+        transform.Rotate((playerData.transform.position - transform.position)*Speed * Time.deltaTime);
+        //transform.Translate((playerData.transform.position - transform.position) * Time.deltaTime * Speed);
+    }
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
     {
         //Player playerLogic = player.GetComponent<Player>();

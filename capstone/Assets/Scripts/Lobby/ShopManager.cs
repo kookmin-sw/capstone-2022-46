@@ -94,9 +94,9 @@ public class ShopManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Ink", PlayerPrefs.GetInt("Ink") - PlayerPrefs.GetInt("Price3"));
                 PlayerPrefs.SetInt("Price3", PlayerPrefs.GetInt("Price3") + 1); // 가격 상승
-                Debug.Log("가격 " + PlayerPrefs.GetInt("Price2") + "잉크로 상승");
+                Debug.Log("가격 " + PlayerPrefs.GetInt("Price3") + "잉크로 상승");
                 PlayerPrefs.SetInt("AtkSpd", PlayerPrefs.GetInt("AtkSpd") + 1); // 업그레이드 적용
-                Debug.Log("공격속도 " + PlayerPrefs.GetInt("Speed") + "로 상승");
+                Debug.Log("공격속도 " + PlayerPrefs.GetInt("AtkSpd") + "로 상승");
 
 
             }
@@ -113,6 +113,6 @@ public class ShopManager : MonoBehaviour
         howManyInks.text = "현재   보유량: "+ PlayerPrefs.GetInt("Ink");//현재 재화 보유량
         statText1.text = "공격력 1 증가(" + PlayerPrefs.GetInt("Price1") + ")" +'\n' +  "(현재 공격력: " + (int)(PlayerPrefs.GetInt("Power") + 10) + ")";//기본수치 그냥 하드코딩함
         statText2.text = "이동속도 0.1 증가(" + PlayerPrefs.GetInt("Price2") + ")" + '\n' + "(현재 이동속도: " + (int)(PlayerPrefs.GetInt("Speed") + 3) + ")";//기본수치 그냥 하드코딩함
-        statText3.text = "공격속도 10% 증가(" + PlayerPrefs.GetInt("Price2") + ")" + '\n' + "(현재 공격속도: " /*+ (int)(PlayerPrefs.GetInt("AtkSpd") )*/ + ")";//기본수치 수정 귀찮아서 초기공속 정해지면 함
+        statText3.text = "공격속도 10% 증가(" + PlayerPrefs.GetInt("Price3") + ")" + '\n' + "(현재 공격속도: " + (int)(PlayerPrefs.GetInt("AtkSpd") + 1) + ")";//기본수치 하드코딩
     }
 }

@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
         if (PlayerPrefs.HasKey("AtkSpd"))
         {
             for(int i = 0; i< PlayerPrefs.GetInt("AtkSpd"); i++)
-                maxShotDelay *= 9/10;
+                maxShotDelay += 1;
         }
 
         spriteRenderer = GetComponent<SpriteRenderer>();//피격표시용
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
              return;
 
 
-        if (curShotDelay < maxShotDelay)
+        if (curShotDelay < 1/maxShotDelay)
             return;
 
         switch (power)
@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (col.gameObject.tag == "Ticket")
+        if (col.gameObject.tag == "Ticket")//티켓 습득 시 상점 호출
         {
             GameManager manager = gameManager.GetComponent<GameManager>();
             manager.shopSet.SetActive(true);
@@ -213,7 +213,7 @@ public class Player : MonoBehaviour
         int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
         StartCoroutine(KnockBack(dirc));
 
-        Invoke("OffDamaged", 0.7f);
+        Invoke("OffDamaged", 0.4f);
 
     }
 
