@@ -65,7 +65,7 @@ public class bossSisters : MonoBehaviour
     void OnEnable()
     {
       health = 100;
-      Invoke("Stop", 2);
+      Invoke("Stop", 2.2f);
     }
 
     void Stop() //정지부분
