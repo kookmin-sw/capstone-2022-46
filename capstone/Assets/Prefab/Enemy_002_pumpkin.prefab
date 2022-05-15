@@ -130,7 +130,7 @@ MonoBehaviour:
   itemCoin: {fileID: 0}
   itemInk: {fileID: 0}
   itemTicket: {fileID: 0}
-  player: {fileID: 8960890943106198213, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
+  player: {fileID: 0}
   objectManager: {fileID: 0}
   sprites:
   - {fileID: 663169135701200238, guid: f407977ef641187458685ce145e99291, type: 3}
