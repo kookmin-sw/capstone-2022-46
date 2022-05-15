@@ -50,7 +50,7 @@ public class IngameShop : MonoBehaviour
         {
             scoreData.score -= price1;
             price1++;
-            priceText1.text = "+10%(" + price1 + "����)";
+            priceText1.text = "+10%(" + price1 + "골드)";
             Player.instance.dmg = Player.instance.dmg * (float)(1.1);//파워업
             statText1.text = "현재 공격력: " + (int)Player.instance.dmg;
             Debug.Log("현재 공격력: " + Player.instance.dmg);
