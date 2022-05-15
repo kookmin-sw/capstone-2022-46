@@ -25,68 +25,68 @@ public class IngameShop : MonoBehaviour
         price1 = 1;
         price2 = 1;
         price3 = 1;
-        priceText1.text = "+10%(1°ñµå)";
-        priceText2.text = "+10%(1°ñµå)";
-        priceText3.text = "+10%(1°ñµå)";
-        Player playerData = player.GetComponent<Player>();
-        statText1.text = "ÇöÀç °ø°Ý·Â: " + (int)playerData.dmg;
-        statText2.text = "ÇöÀç ÀÌµ¿¼Óµµ: " + (int)playerData.Speed;
-        statText3.text = "ÇöÀç °ø°Ý¼Óµµ: " + (int)playerData.maxShotDelay;
+        priceText1.text = "+10%(1ï¿½ï¿½ï¿½ï¿½)";
+        priceText2.text = "+10%(1ï¿½ï¿½ï¿½ï¿½)";
+        priceText3.text = "+10%(1ï¿½ï¿½ï¿½ï¿½)";
+        //Player playerData = player.GetComponent<Player>();
+        statText1.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½: " + (int)Player.instance.dmg;
+        statText2.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½: " + (int)Player.instance.Speed;
+        statText3.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½: " + (int)Player.instance.maxShotDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Player playerData = player.GetComponent<Player>();
-        statText1.text = "ÇöÀç °ø°Ý·Â: " + (int)playerData.dmg;
-        statText2.text = "ÇöÀç ÀÌµ¿¼Óµµ: " + (int)playerData.Speed;
-        statText3.text = "ÇöÀç °ø°Ý¼Óµµ: " + (int)playerData.maxShotDelay;
+        //Player playerData = player.GetComponent<Player>();
+        statText1.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½: " + (int)Player.instance.dmg;
+        statText2.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½: " + (int)Player.instance.Speed;
+        statText3.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½: " + (int)Player.instance.maxShotDelay;
     }
     public void PurchasePower()
     {
-        Player playerData = player.GetComponent<Player>();
+        //Player playerData = player.GetComponent<Player>();
         GoldState scoreData = coin.GetComponent<GoldState>();
         if (scoreData.score >= price1)
         {
             scoreData.score -= price1;
             price1++;
-            priceText1.text = "+10%(" + price1 + "°ñµå)";
-            playerData.dmg = playerData.dmg * (float)(1.1);//ÆÄ¿ö¾÷
-            statText1.text = "ÇöÀç °ø°Ý·Â: " + (int)playerData.dmg;
-            Debug.Log("ÇöÀç °ø°Ý·Â: " + playerData.dmg);
+            priceText1.text = "+10%(" + price1 + "ï¿½ï¿½ï¿½ï¿½)";
+            Player.instance.dmg = Player.instance.dmg * (float)(1.1);//ï¿½Ä¿ï¿½ï¿½ï¿½
+            statText1.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½: " + (int)Player.instance.dmg;
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½: " + Player.instance.dmg);
         }
-        else Debug.Log("µ·ÀÌ ¾øÀ½");
+        else Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
     }
 
     public void PurchaseSpeed()
     {
-        Player playerData = player.GetComponent<Player>();
+        //Player playerData = player.GetComponent<Player>();
         GoldState scoreData = coin.GetComponent<GoldState>();
         if (scoreData.score >= price2)
         {
             scoreData.score -= price2;
             price2++;
-            priceText2.text = "+10%(" + price2 + "°ñµå)";
-            playerData.Speed = playerData.Speed * (float)(1.1);//½ºÇÇµå¾÷
-            statText2.text = "ÇöÀç ÀÌµ¿¼Óµµ: " + (int)playerData.Speed;
-            Debug.Log("ÇöÀç ÀÌµ¿¼Óµµ: " + playerData.Speed);
+            priceText2.text = "+10%(" + price2 + "ï¿½ï¿½ï¿½ï¿½)";
+            Player.instance.Speed = Player.instance.Speed * (float)(1.1);//ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½
+            statText2.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½: " + (int)Player.instance.Speed;
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½: " + Player.instance.Speed);
         }
-        else Debug.Log("µ·ÀÌ ¾øÀ½");
+        else Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
     }
     public void PurchaseAtkSpd()
     {
-        Player playerData = player.GetComponent<Player>();
+        //Player playerData = player.GetComponent<Player>();
         GoldState scoreData = coin.GetComponent<GoldState>();
         if (scoreData.score >= price3)
         {
             scoreData.score -= price3;
             price3++;
-            priceText3.text = "+10%(" + price3 + "°ñµå)";
-            playerData.maxShotDelay = playerData.maxShotDelay * (float)(1.1);//°ø°Ý¼Óµµ¾÷
-            statText3.text = "ÇöÀç °ø°Ý¼Óµµ: " + (int)(playerData.maxShotDelay);
-            Debug.Log("ÇöÀç °ø°Ý¼Óµµ: " + playerData.maxShotDelay);
+            priceText3.text = "+10%(" + price3 + "ï¿½ï¿½ï¿½ï¿½)";
+            Player.instance.maxShotDelay = Player.instance.maxShotDelay * (float)(1.1);//ï¿½ï¿½ï¿½Ý¼Óµï¿½ï¿½ï¿½
+            statText3.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½: " + (int)(Player.instance.maxShotDelay);
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¼Óµï¿½: " + Player.instance.maxShotDelay);
         }
-        else Debug.Log("µ·ÀÌ ¾øÀ½");
+        else Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
     }
-   
+
 }

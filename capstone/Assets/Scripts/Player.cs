@@ -196,7 +196,8 @@ public class Player : MonoBehaviour
 
         if (col.gameObject.tag == "Ticket")//티켓 습득 시 상점 호출
         {
-            GameManager manager = gameManager.GetComponent<GameManager>();
+            GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            //GameObject.Find("ObjectManager").GetComponent<ObjectManager>().MakeObj("bulletPlayer");
             manager.shopSet.SetActive(true);
         }
 
