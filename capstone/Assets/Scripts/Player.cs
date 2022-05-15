@@ -119,12 +119,12 @@ public class Player : MonoBehaviour
         switch (power)
         {
             case 1:
-                Debug.Log("지금 1 ");
+                //Debug.Log("지금 1 ");
                 //GameObject bullet = objectManager.MakeObj("bulletPlayer");
                 GameObject bullet = GameObject.Find("ObjectManager").GetComponent<ObjectManager>().MakeObj("bulletPlayer");
-                Debug.Log("지금 2 ");
+                //Debug.Log("지금 2 ");
                 bullet.transform.position = transform.position;
-                Debug.Log("지금 3 ");
+              //  Debug.Log("지금 3 ");
                 curShotDelay = 0;
                 break;
             case 2:// 파워업 상태

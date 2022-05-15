@@ -147,8 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: bossSisters
   enemyScore: 10000
-  maxHP: 200
-  health: 200
+  maxHP: 50
+  health: 50
   Speed: 1.5
   dmg: 30
   maxShotDelay: 5
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_b_f_L: {fileID: 7767441791047775796, guid: 6ef614b168a12014d99d66151c9a86b1, type: 3}
   sprites: []
   anim: {fileID: 0}
+  bossDead: {fileID: 7835295628515789752, guid: 01f3cacfd91168546920f3bc460d0e81, type: 3}
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 

@@ -10,7 +10,7 @@ public class bossSisters : MonoBehaviour
     //public int ringDrop;
     //public int ticketDrop;
     public float maxHP;
-    public float health;
+    public static float health;
     public float Speed;
     public float dmg;
 
@@ -39,6 +39,7 @@ public class bossSisters : MonoBehaviour
 
     //private Animator foot_S;
     public Animator anim;
+    //public GameObject bossDead;
 
     public int patternIndex = 0;
     public int curPatternCount;
@@ -58,6 +59,9 @@ public class bossSisters : MonoBehaviour
     void Update()
     {
         moveControl();
+
+
+
     }
 
 
@@ -223,6 +227,8 @@ public class bossSisters : MonoBehaviour
     }
 
 
+
+
     void onHit(float dmg)
     {
       Debug.Log("onhit in");
@@ -231,6 +237,11 @@ public class bossSisters : MonoBehaviour
 
         health -= dmg;
         Debug.Log("boss 체력 감소");
+        //spriteRenderer.color = new Color(1, 1, 1, 0.8f);
+        //spriteRenderer.material.color = new Color(255, 167, 167, 255);
+
+        spriteRenderer.material.color = new Color(255/255f , 167/255f, 167/255f);
+        Invoke("OffDamaged", 0.1f);
         //데미지 받은 스프라이트(색깔만 점멸해도 됨)
       /*  if(enemyName == "bossSisters")
         {
@@ -249,7 +260,14 @@ public class bossSisters : MonoBehaviour
 
             Debug.Log("boss 체력 000000");
             gameObject.SetActive(false);
+
         }
+    }
+
+    void OffDamaged()
+    {
+        //spriteRenderer.color = new Color(1, 1, 1, 1f);
+        spriteRenderer.material.color = Color.white;
     }
 
     void ReturnSprite(){

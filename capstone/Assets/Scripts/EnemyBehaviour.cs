@@ -149,7 +149,7 @@ public class EnemyBehaviour : MonoBehaviour
         else if (enemyName == "enemy003")
             fly();
         else simpleMove();
-        
+
     }
 
     void simpleMove()
@@ -194,6 +194,9 @@ public class EnemyBehaviour : MonoBehaviour
 
         health -= dmg;
         Debug.Log("현재 체력: " + health);
+        spriteRenderer.sprite = sprites[1];
+        Invoke("ReturnSprite", 0.1f);
+
         if (health <= 0)
         {
             //   Player playerLogic = player.GetComponent<Player>();

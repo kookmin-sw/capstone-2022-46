@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
   //  public Animator playerDead;
     public GameObject dead;
     public GameObject gameOverImg;
+    public GameObject bossDead;
+    int bossFlag = 0;
+
     //private GameObject playerData;
 
     private void Awake()
@@ -39,6 +42,7 @@ public class GameManager : MonoBehaviour
         enemyObjs = new string[]{"enemy001", "enemy002", "enemy003"};
         ReadSpawnFile();
         //SpawnBoss();
+
         Invoke("SpawnBoss",bossSpawnDelay);
 
         //playerDead = player.GetComponent<Animator>();
@@ -116,6 +120,15 @@ public class GameManager : MonoBehaviour
 
 
         }
+
+
+        if(bossFlag == 1 && bossSisters.health <= 0)
+        {
+          Debug.Log("보스 죽음 애니 시작");
+          Time.timeScale = 0.0f;
+          GameClear();
+        }
+
         //에러나서 잠깐지움.
       //  scoreText.text = string.Format("{0:n0}", playerLogic.score);
     }
@@ -156,6 +169,8 @@ public class GameManager : MonoBehaviour
     {
       Debug.Log("보스생성함");
       Instantiate(boss);
+      bossFlag = 1;
+      //bossDead.transform.position = boss.transform.position;  //위치잡아줌
 
     }
 
@@ -219,16 +234,14 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void MainGameReset()
+
+    void GameClear()
     {
-        dead.SetActive(false);
-        //player.SetActive(true);
-        gameOverImg.SetActive(false);
+        bossDead.SetActive(true); //애니메이션 활성
 
-        Player.health = 100;
-        //Player.instance.transform.position = new Vector3(0, -4, 0);
+        //여기 화면 씬 전화 코드 추가
+
     }
-
 
 
 
