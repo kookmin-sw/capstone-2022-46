@@ -840,7 +840,7 @@ MonoBehaviour:
   - {fileID: 1709851512}
   nextSpawnDelay: 0
   curSpawnDelay: 0
-  bossSpawnDelay: 7
+  bossSpawnDelay: 100
   player: {fileID: 1683766111}
   boss: {fileID: 8363605380323164418, guid: fcd6f38de89fd91448e5257094fbfa42, type: 3}
   scoreText: {fileID: 0}
@@ -4247,7 +4247,7 @@ PrefabInstance:
       objectReference: {fileID: 332134194}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: maxShotDelay
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: objectManager

@@ -119,15 +119,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: enemy002
   ticketDrop: 1
+  inkDrop: 1
   maxHP: 40
   health: 0
-  Speed: 2
-  dmg: 10
+  Speed: 8
+  dmg: 20
   maxShotDelay: 0
   curShotDelay: 0
   bullet: {fileID: 0}
   itemCoin: {fileID: 0}
-  itemRing: {fileID: 0}
+  itemInk: {fileID: 0}
   itemTicket: {fileID: 0}
   player: {fileID: 8960890943106198213, guid: d7ae02d33172b0b478431be3bdc1a046, type: 3}
   objectManager: {fileID: 0}
