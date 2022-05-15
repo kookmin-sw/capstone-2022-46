@@ -6,6 +6,7 @@ public class ObjectManager : MonoBehaviour
 {
     public GameObject enemy001Prefab;
     public GameObject enemy002Prefab;
+    public GameObject enemy003Prefab;
     public GameObject bossSistersPrefab;
     public GameObject itemCoinPrefab;
     public GameObject itemRingPrefab;
@@ -20,6 +21,7 @@ public class ObjectManager : MonoBehaviour
 
     GameObject[] enemy001;
     GameObject[] enemy002;
+    GameObject[] enemy003;
     GameObject[] bossSisters;
 
     GameObject[] itemCoin;
@@ -43,6 +45,7 @@ public class ObjectManager : MonoBehaviour
     {
         enemy001 = new GameObject[20];
         enemy002 = new GameObject[10];
+        enemy003 = new GameObject[10];
         bossSisters = new GameObject[1];
 
         itemCoin = new GameObject[10];
@@ -73,6 +76,12 @@ public class ObjectManager : MonoBehaviour
         {
             enemy002[index] = Instantiate(enemy002Prefab);
             enemy002[index].SetActive(false);
+        }
+
+        for (int index = 0; index < enemy003.Length; index++)
+        {
+            enemy003[index] = Instantiate(enemy003Prefab);
+            enemy003[index].SetActive(false);
         }
         /*
         for (int index = 0; index < bossSisters.Length; index++)
@@ -150,11 +159,14 @@ public class ObjectManager : MonoBehaviour
             case "enemy002":
                 targetPool = enemy002;
                 break;
-                /*
-            case "bossSisters":
-                targetPool = bossSisters;
+            case "enemy003":
+                targetPool = enemy003;
                 break;
-                */
+            /*
+        case "bossSisters":
+            targetPool = bossSisters;
+            break;
+            */
             case "itemCoin":
                 targetPool = itemCoin;
                 break;
@@ -210,11 +222,14 @@ public class ObjectManager : MonoBehaviour
             case "enemy002":
                 targetPool = enemy002;
                 break;
-                /*
-            case "bossSisters":
-                targetPool = bossSisters;
+            case "enemy003":
+                targetPool = enemy003;
                 break;
-                */
+            /*
+        case "bossSisters":
+            targetPool = bossSisters;
+            break;
+            */
             case "itemCoin":
                 targetPool = itemCoin;
                 break;

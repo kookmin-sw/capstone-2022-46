@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2510992906748545361}
   - component: {fileID: 3396839796427900285}
+  - component: {fileID: 3200728280125376537}
   - component: {fileID: 6122512829152414836}
+  - component: {fileID: 1362812059437447394}
   m_Layer: 0
-  m_Name: butterfly
-  m_TagString: Untagged
+  m_Name: Enemy_003_butterfly
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 2791376018863455135, guid: 2ca219c4282e89c498d900b6183566c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.52, y: 2.53}
@@ -83,6 +85,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3200728280125376537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158674149604048296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adb0357527fc8b49951021cc53d5ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyName: enemy003
+  ticketDrop: 1
+  inkDrop: 1
+  maxHP: 10
+  health: 0
+  Speed: 3
+  dmg: 10
+  maxShotDelay: 0
+  curShotDelay: 0
+  bullet: {fileID: 0}
+  itemCoin: {fileID: 0}
+  itemInk: {fileID: 0}
+  itemTicket: {fileID: 0}
+  player: {fileID: 0}
+  objectManager: {fileID: 0}
+  sprites: []
+  patternIndex: 0
+  curPatternCount: 0
+  maxPatternCount: 
 --- !u!60 &6122512829152414836
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -213,3 +246,24 @@ PolygonCollider2D:
       - {x: -0.89, y: -1.1949999}
       - {x: -0.83, y: -0.905}
       - {x: -0.71999997, y: -0.965}
+--- !u!50 &1362812059437447394
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158674149604048296}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

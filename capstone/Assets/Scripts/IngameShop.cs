@@ -31,13 +31,16 @@ public class IngameShop : MonoBehaviour
         Player playerData = player.GetComponent<Player>();
         statText1.text = "현재 공격력: " + (int)playerData.dmg;
         statText2.text = "현재 이동속도: " + (int)playerData.Speed;
-        statText3.text = "현재 공격속도: " + (int)(1 / playerData.maxShotDelay);
+        statText3.text = "현재 공격속도: " + (int)playerData.maxShotDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Player playerData = player.GetComponent<Player>();
+        statText1.text = "현재 공격력: " + (int)playerData.dmg;
+        statText2.text = "현재 이동속도: " + (int)playerData.Speed;
+        statText3.text = "현재 공격속도: " + (int)playerData.maxShotDelay;
     }
     public void PurchasePower()
     {
@@ -79,8 +82,8 @@ public class IngameShop : MonoBehaviour
             scoreData.score -= price3;
             price3++;
             priceText3.text = "+10%(" + price3 + "골드)";
-            playerData.maxShotDelay = playerData.maxShotDelay * (float)(0.9);//공격속도업
-            statText3.text = "현재 공격속도: " + (int)(1/playerData.maxShotDelay);
+            playerData.maxShotDelay = playerData.maxShotDelay * (float)(1.1);//공격속도업
+            statText3.text = "현재 공격속도: " + (int)(playerData.maxShotDelay);
             Debug.Log("현재 공격속도: " + playerData.maxShotDelay);
         }
         else Debug.Log("돈이 없음");

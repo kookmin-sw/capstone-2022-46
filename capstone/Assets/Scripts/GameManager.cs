@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         GameLoad();
 
         spawnList = new List<Spawn>();
-        enemyObjs = new string[]{"enemy001", "enemy002"};
+        enemyObjs = new string[]{"enemy001", "enemy002", "enemy003"};
         ReadSpawnFile();
         //SpawnBoss();
         Invoke("SpawnBoss",bossSpawnDelay);
@@ -130,6 +130,9 @@ public class GameManager : MonoBehaviour
                 break;
             case "enemy002":
                 enemyIndex = 1;
+                break;
+            case "enemy003":
+                enemyIndex = 2;
                 break;
         }
         int enemyPoint = spawnList[spawnIndex].point;
