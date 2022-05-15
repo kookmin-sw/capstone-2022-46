@@ -164,8 +164,10 @@ public class EnemyBehaviour : MonoBehaviour
     void fly()
     {
         Player playerData = player.GetComponent<Player>();
-        transform.Rotate((playerData.transform.position - transform.position)*Speed * Time.deltaTime);
-        //transform.Translate((playerData.transform.position - transform.position) * Time.deltaTime * Speed);
+        transform.Rotate(playerData.transform.position - transform.position);//팔랑대기
+        transform.position = transform.position + (playerData.transform.position - transform.position).normalized * Speed * Time.deltaTime; // 쫓아오기
+        
+        //simpleMove();
     }
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
     {

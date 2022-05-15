@@ -102,7 +102,7 @@ MonoBehaviour:
   inkDrop: 1
   maxHP: 15
   health: 0
-  Speed: 2.5
+  Speed: 4
   dmg: 10
   maxShotDelay: 0
   curShotDelay: 0

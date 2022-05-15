@@ -103,7 +103,7 @@ MonoBehaviour:
   maxHP: 10
   health: 0
   Speed: 3
-  dmg: 10
+  dmg: 5
   maxShotDelay: 0
   curShotDelay: 0
   bullet: {fileID: 0}

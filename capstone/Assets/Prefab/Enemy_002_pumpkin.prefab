@@ -122,8 +122,8 @@ MonoBehaviour:
   inkDrop: 1
   maxHP: 40
   health: 0
-  Speed: 2
-  dmg: 10
+  Speed: 8
+  dmg: 20
   maxShotDelay: 0
   curShotDelay: 0
   bullet: {fileID: 0}
