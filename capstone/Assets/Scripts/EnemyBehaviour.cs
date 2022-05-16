@@ -30,6 +30,8 @@ public class EnemyBehaviour : MonoBehaviour
     public int patternIndex;
     public int curPatternCount;
     public int[] maxPatternCount;
+    public bool isRedShoes = false;
+
 
     Vector3 dirVec;
 
@@ -54,6 +56,10 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
             case "enemy003":
                 health = 10;
+                break;
+
+            case "bossShoes":
+                health = 20;
                 break;
 
                 /*
@@ -166,7 +172,7 @@ public class EnemyBehaviour : MonoBehaviour
         Player playerData = player.GetComponent<Player>();
         transform.Rotate(playerData.transform.position - transform.position);//팔랑대기
         transform.position = transform.position + (playerData.transform.position - transform.position).normalized * Speed * Time.deltaTime; // 쫓아오기
-        
+
         //simpleMove();
     }
     private void OnTriggerEnter2D(Collider2D col) //적과 충돌
@@ -181,6 +187,12 @@ public class EnemyBehaviour : MonoBehaviour
             //Debug.Log("잡몹 받는 데미지 : " + playerLogic.dmg);
             Debug.Log("잡몹 받는 데미지 : " + Player.instance.dmg);
             //onHit(playerLogic.dmg);
+
+            if(isRedShoes == true)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
             onHit(Player.instance.dmg);
         }
 

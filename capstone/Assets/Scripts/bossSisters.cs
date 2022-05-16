@@ -41,9 +41,10 @@ public class bossSisters : MonoBehaviour
     public Animator anim;
     //public GameObject bossDead;
 
-    public int patternIndex = 0;
+    public int patternIndex = 5;
     public int curPatternCount;
     public int[] maxPatternCount;
+    public bool downOver = false;
 
 
     void Awake()
@@ -63,13 +64,14 @@ public class bossSisters : MonoBehaviour
 
 
 
+
     }
 
 
     //생성됨.
     void OnEnable()
     {
-      health = 100;
+      health = maxHP;
       Invoke("Stop", 2.2f);
     }
 
@@ -78,17 +80,26 @@ public class bossSisters : MonoBehaviour
         Debug.Log("stop");
         Speed = 0;
         Invoke("Think", 2f);
+        downOver = true;
     }
     void Think()
     {
-        //FireRight();
-        //kickLeft();
-        //kickRight();
-        //megalodon();
-        //finger_S(1);
-        phase_Two();
+        if(health >= (maxHP/4)*3)
+        {
+            phase_One();
+        }
+        else if(health >= (maxHP/4)*2)
+        {
+            phase_Two();
+        }
+        else
+        {
+            phase_Three();
+        }
 
     }
+
+
 
 
 
@@ -181,7 +192,7 @@ public class bossSisters : MonoBehaviour
     }
 
 //발이랑 손가락 두개나옴
-    void phase_Two()
+    void foot_finger()
     {
         int dir = Random.Range(0, 2); //0이면 왼쪽, 1이면 오른쪽으로
 
@@ -200,6 +211,79 @@ public class bossSisters : MonoBehaviour
     }
 
 
+    void phase_One()
+    {
+        //yield return new WaitForSeconds(3f);
+        Debug.Log("phase_One 실행중");
+        FireRight();
+        //yield return new WaitForSeconds(1f);
+        Invoke("Think", 3f);
+    }
+
+    void phase_Two()
+    {
+        //yield return new WaitForSeconds(2f);
+        int pattern = Random.Range(0, 5);
+        Debug.Log("패턴 넘버 : " + pattern);
+        switch(pattern)
+        {
+
+            case 0 :
+            kickLeft();
+            break;
+
+            case 1 :
+            kickRight();
+            break;
+
+            default :
+            FireRight();
+            break;
+
+        }
+
+        Invoke("Think", 3f);
+
+    }
+
+    void phase_Three()
+    {
+        //yield return new WaitForSeconds(2f);
+        int pattern = Random.Range(0, 5);
+
+        switch(pattern)
+        {
+
+            case 0 :
+            foot_finger();
+            break;
+
+            case 1 :
+            megalodon();
+            break;
+
+
+            default :
+            FireRight();
+            break;
+
+        }
+
+        Invoke("Think", 3f);
+    }
+
+
+/*
+    IEnumerator phase_Four()
+    {
+
+    }
+
+    IEnumerator phase_Five()
+    {
+
+    }
+*/
 
     void moveControl()
     {

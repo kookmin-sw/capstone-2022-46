@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     public GameObject bossDead;
     int bossFlag = 0;
 
+    public GameObject background;
+
+
     //private GameObject playerData;
 
     private void Awake()
