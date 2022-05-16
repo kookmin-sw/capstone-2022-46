@@ -190,7 +190,7 @@ public class EnemyBehaviour : MonoBehaviour
 
             if(isRedShoes == true)
             {
-                gameObject.SetActive(false);
+                
                 return;
             }
             onHit(Player.instance.dmg);
