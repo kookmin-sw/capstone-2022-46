@@ -84,6 +84,7 @@ public class bossSisters : MonoBehaviour
     }
     void Think()
     {
+        
         if(health >= (maxHP/4)*3)
         {
             phase_One();
@@ -96,6 +97,8 @@ public class bossSisters : MonoBehaviour
         {
             phase_Three();
         }
+
+
 
     }
 
