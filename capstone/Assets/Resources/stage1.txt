@@ -1,2 +1,2 @@
-2,enemy001,6
-2,enemy001,6
+2,enemy003,6
+2,enemy003,6

@@ -169,9 +169,9 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void fly()
     {
-        Player playerData = player.GetComponent<Player>();
-        transform.Rotate(playerData.transform.position - transform.position);//팔랑대기
-        transform.position = transform.position + (playerData.transform.position - transform.position).normalized * Speed * Time.deltaTime; // 쫓아오기
+        //Player playerData = player.GetComponent<Player>();
+        transform.Rotate(Player.instance.transform.position - transform.position);//팔랑대기
+        transform.position = transform.position + (Player.instance.transform.position - transform.position).normalized * Speed * Time.deltaTime; // 쫓아오기
 
         //simpleMove();
     }
@@ -190,7 +190,7 @@ public class EnemyBehaviour : MonoBehaviour
 
             if(isRedShoes == true)
             {
-                
+
                 return;
             }
             onHit(Player.instance.dmg);
