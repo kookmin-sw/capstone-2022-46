@@ -4992,7 +4992,7 @@ PrefabInstance:
       objectReference: {fileID: 1223603727}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: Speed
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: money
@@ -5004,7 +5004,7 @@ PrefabInstance:
       objectReference: {fileID: 332134194}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: maxShotDelay
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: objectManager

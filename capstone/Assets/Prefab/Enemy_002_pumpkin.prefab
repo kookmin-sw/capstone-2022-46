@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: enemy002
-  ticketDrop: 1
-  inkDrop: 1
+  ticketDrop: 7
+  inkDrop: 7
   maxHP: 40
   health: 0
   Speed: 8
@@ -138,6 +138,7 @@ MonoBehaviour:
   patternIndex: 0
   curPatternCount: 0
   maxPatternCount: 
+  isRedShoes: 0
 --- !u!70 &9060786725829897341
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
