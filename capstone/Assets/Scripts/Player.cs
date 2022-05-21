@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     // 싱글턴
     public static Player instance = null;
-
+    public FloatingJoystick joy;
     public static float health = 100;
     public float Speed = 3f;
     public float dmg;
@@ -35,12 +35,12 @@ public class Player : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public bool isHit;
     public bool isMaingame;
-
+    
     void Update()
     {
         Move();
         curShotDelay += Time.deltaTime;
-        Fire();
+        //Fire();
 
         if (SceneManager.GetActiveScene().buildIndex != 3)
          {
@@ -109,8 +109,8 @@ public class Player : MonoBehaviour
 
     void Fire()
     {
-        if (!Input.GetKey(KeyCode.Space))
-             return;
+        //if (!Input.GetKey(KeyCode.Space))
+          //   return;
 
 
         if (curShotDelay < 1/maxShotDelay)
@@ -253,7 +253,13 @@ public class Player : MonoBehaviour
 
 
     private void Move(){
-      if(Input.GetKey(KeyCode.UpArrow)){
+        float x = joy.Horizontal;
+        float y = joy.Vertical;
+        Vector2 moveVec = new Vector2(x, y);
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+        rigid.MovePosition(rigid.position + moveVec * Speed * Time.deltaTime);
+
+        if (Input.GetKey(KeyCode.UpArrow)){
         // Translate는 현재 위치에서 ()안에 들어간 값만큼 값을 변화시킨다
         transform.Translate(Vector2.up * Speed * Time.deltaTime);
         // Time.deltaTime은 모든 기기(컴퓨터, OS를 망론하고)에 같은 속도로 움직이도록 하기 위한 것
@@ -280,5 +286,9 @@ public class Player : MonoBehaviour
       viewPos.y = Mathf.Clamp01(viewPos.y); //y값을 0이상, 1이하로 제한한다.
       Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewPos); //다시 월드 좌표로 변환한다.
       transform.position = worldPos; //좌표를 적용한다.
+    }
+    public void Shoot()
+    {
+        Fire();
     }
 }

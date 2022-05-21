@@ -165,12 +165,12 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void moveControl()
     {
-        transform.position = transform.position + dirVec.normalized * Speed * Time.deltaTime;
+        transform.position = transform.position + dirVec.normalized * Speed * 60 * Time.deltaTime;
     }
     void fly()
     {
         //Player playerData = player.GetComponent<Player>();
-        transform.Rotate(Player.instance.transform.position - transform.position);//팔랑대기
+        transform.Rotate((Player.instance.transform.position - transform.position)*Speed*Time.deltaTime);//팔랑대기
         transform.position = transform.position + (Player.instance.transform.position - transform.position).normalized * Speed * Time.deltaTime; // 쫓아오기
 
         //simpleMove();
