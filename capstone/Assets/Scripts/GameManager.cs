@@ -266,4 +266,16 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
+    public void GoMenu()
+    {
+        menuSet.SetActive(true);
+    }
+    public void KillMenu()
+    {
+        menuSet.SetActive(false);
+    }
+    public void KillShop()
+    {
+        shopSet.SetActive(false);
+    }
 }

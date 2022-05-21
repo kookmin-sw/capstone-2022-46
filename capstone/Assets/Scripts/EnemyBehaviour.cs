@@ -165,7 +165,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void moveControl()
     {
-        transform.position = transform.position + dirVec.normalized * Speed * 60 * Time.deltaTime;
+        transform.position = transform.position + dirVec.normalized * Speed * Time.deltaTime;
     }
     void fly()
     {
