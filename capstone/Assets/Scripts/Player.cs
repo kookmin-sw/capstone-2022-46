@@ -48,6 +48,13 @@ public class Player : MonoBehaviour
              isMaingame = false;
          }
 
+        
+            SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByName("MainGame"));
+        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Fire();
+        }
 
 
     }

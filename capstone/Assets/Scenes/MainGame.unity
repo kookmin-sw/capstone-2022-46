@@ -2479,7 +2479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1053596305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2771,7 +2771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBA54\uB274\uB85C \uB098\uAC00\uAE30"
+  m_Text: "\uAC8C\uC784 \uC885\uB8CC"
 --- !u!222 &1146566798
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4253,7 +4253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000000058208, y: -129.21}
+  m_AnchoredPosition: {x: 0.0000000058208, y: -170.9999}
   m_SizeDelta: {x: 301, y: 535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1949374662
@@ -4521,7 +4521,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2027884957}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 332134194}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GameExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2027884957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,7 +4866,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 332134194}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: KillShop
+        m_MethodName: KillMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4992,7 +5004,7 @@ PrefabInstance:
       objectReference: {fileID: 1223603727}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: Speed
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6590643188225147368, guid: 9b033fffda9df384b8b3218a7257ba12, type: 3}
       propertyPath: money

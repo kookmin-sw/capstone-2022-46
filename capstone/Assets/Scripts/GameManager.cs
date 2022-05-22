@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
     {
         //Player playerData = player.GetComponent<Player>();
 
-        //PlayerPrefs.SetInt("InkBottle", playerData.ink);//이게 기본 템플릿, 이걸 따라서 저장해야 할 데이터를 복제하면 됨
+        //PlayerPrefs.SetInt("InkBottle", playerData.ink);
         PlayerPrefs.SetInt("InkBottle", Player.instance.ink);
         PlayerPrefs.Save();
     }
@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour
 
     public void GameRetry()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(goGameOverScene());
     }
     public void GoShop()
     {
@@ -258,7 +258,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameExit()
     {
-        GameSave();
+        //GameSave();
         Application.Quit();
     }
 
