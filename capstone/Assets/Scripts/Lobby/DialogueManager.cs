@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
 
     void GenerateData()
     {
-      talkData.Add(100, new string[] {"안녕하세요 작가님", "책속으로 오신것을 환영합니다."});
+      talkData.Add(100, new string[] {"안녕하세요 작가님", "책 속에 오신것을 환영합니다."});
       talkData.Add(200, new string[] {"이곳은 상점입니다", "마음에 드는것을 골라보세요."});
 
       talkData.Add(10, new string[] {"평범한 책장이다."});

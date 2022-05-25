@@ -170,7 +170,7 @@ public class EnemyBehaviour : MonoBehaviour
     void fly()
     {
         //Player playerData = player.GetComponent<Player>();
-        transform.Rotate((Player.instance.transform.position - transform.position)*Speed*Time.deltaTime);//팔랑대기
+        transform.Rotate((Player.instance.transform.position - transform.position)*Speed*Time.deltaTime*60);//팔랑대기
         transform.position = transform.position + (Player.instance.transform.position - transform.position).normalized * Speed * Time.deltaTime; // 쫓아오기
 
         //simpleMove();

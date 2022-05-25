@@ -85,3 +85,7 @@
 0,enemy002,8
 0,enemy001,2
 0,enemy001,10
+3,enemy003, 5
+0,enemy003,7
+0,enemy003,9
+0,enemy003,3
