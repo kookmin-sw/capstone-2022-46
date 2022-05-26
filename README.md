@@ -74,7 +74,10 @@
 
 * PC
 1. https://drive.google.com/drive/folders/1OR1tDDwOOTWIwYRjiQkRpPMxiIbgLDZV?usp=sharing 링크로 구글 드라이브에 접속한다
-2. ![image](https://user-images.githubusercontent.com/19148675/170537037-1fd0f9f8-4945-4f3a-ab1e-ececcb3c7197.png)
+2. PC라는 이름의 파일을 내려받고 압축을 해제한다.
+![image](https://user-images.githubusercontent.com/19148675/170537037-1fd0f9f8-4945-4f3a-ab1e-ececcb3c7197.png) 
+3. Tall Tales 아이콘을 클릭해 실행한다.
+![image](https://user-images.githubusercontent.com/19148675/170538889-6c976858-c574-4246-86cf-9b1757e44eb8.png)
 
 ## 5. 기타
 
