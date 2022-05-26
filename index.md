@@ -19,7 +19,9 @@
    플레이를 할 수 있는 게임을 만들어 보고싶다는 생각을 하게 되었다.
 
 ### Abstract
-
+- In this recent trend of higher graphical games, there was a game with relatively simple graphics and made a big influence, ‘Vampire Survivors’. 
+  In this game, our team imagined “What made people go wild on such a simple game?” and came up with two reasons. ‘simplicity’, and ‘character growth’. 
+  So we made a catchy game with short playtime for busy people.
 
 ---------------------------------------
 ---------------------------------------
@@ -66,7 +68,16 @@
 ---------------------------------------
 ## 4. 게임 이용법
 
-차후추가
+* 모바일
+1. 휴대폰으로 qr 코드를 찍는다.
+<p> <img src="page_img/qr.jpg" width="200" height="200"></p>
+
+2. 빨간부분의 링크를 클릭
+<p> <img src="page_img/m1.jpg" width="200" height="400"></p>
+
+3. apk파일을 다운로드 한뒤, 설치해준다.
+<p> <img src="page_img/m2.jpg" width="200" height="400"></p>
+
 
 ---------------------------------------
 ---------------------------------------
