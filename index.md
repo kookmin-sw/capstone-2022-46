@@ -70,13 +70,13 @@
 
 * 모바일
 1. 휴대폰으로 qr 코드를 찍는다.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p> <img src="page_img/qr.jpg" width="200" height="200"></p>
+  <p> <img src="page_img/qr.jpg" width="200" height="200"></p>
 
 2. 빨간부분의 링크를 클릭
-&nbsp;&nbsp;&nbsp; <p> <img src="page_img/m1.jpg" width="200" height="400"></p>
+  <p> <img src="page_img/m1.jpg" width="200" height="400"></p>
 
 3. apk파일을 다운로드 한뒤, 설치해준다.
-&nbsp;&nbsp;&nbsp; <p> <img src="page_img/m2.jpg" width="200" height="400"></p>
+  <p> <img src="page_img/m2.jpg" width="200" height="400"></p>
 
 
 * PC
