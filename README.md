@@ -20,7 +20,9 @@
    플레이를 할 수 있는 게임을 만들어 보고싶다는 생각을 하게 되었다.
 
 ### Abstract
-
+- In this recent trend of higher graphical games, there was a game with relatively simple graphics and made a big influence, ‘Vampire Survivors’. 
+  In this game, our team imagined “What made people go wild on such a simple game?” and came up with two reasons. ‘simplicity’, and ‘character growth’. 
+  So we made a catchy game with short playtime for busy people.
 
 
 ## 2. 게임 소개
