@@ -25,20 +25,23 @@
 
 ## 2. 게임 소개
 
-<p> <img src="page_img/p1.png" width="300" height="200"> <img src="page_img/p2.png">  
-</p>
+<p> <img src="page_img/p1.png" width="300" height="200"> &nbsp;&nbsp;&nbsp; <img src="page_img/p2.png" width="300" height="200" ></p>
+<p> <img src="page_img/p3.png" width="300" height="200"> &nbsp;&nbsp;&nbsp; <img src="page_img/p4.png" width="300" height="200" ></p>
+
 
 
 ---------------------------------------
 **게임 플레이**
-<p> <img src="page_img/play_scene.png">  
+<p> <img src="page_img/p5.png">  
 </p>
  - 동화의 주인공이 되어 위에서 몰려오는 적을 피하고 공격하며
    자신만의 모험을 하게 됩니다.
 
 
+---------------------------------------
+**소개 동영상**
 
-
+[![Alttext](http://img.youtube.com/vi/lKygw1w8_xg/0.jpg)](https://www.youtube.com/watch?v=lKygw1w8_xg)
 
 ## 3. 팀 소개
 
