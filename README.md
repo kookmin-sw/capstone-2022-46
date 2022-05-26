@@ -25,7 +25,7 @@
 
 ## 2. 게임 소개
 
-<p> <img src="page_img/logo.png">  
+<p> <img src="page_img/p1"> <img src="page_img/p2">  
 </p>
 
 
