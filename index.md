@@ -70,7 +70,7 @@
 
 * 모바일
 1. 휴대폰으로 qr 코드를 찍는다.
-<p> <img src="page_img/qr.jpg" width="200" height="200"></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p> <img src="page_img/qr.jpg" width="200" height="200"></p>
 
 2. 빨간부분의 링크를 클릭
 <p> <img src="page_img/m1.jpg" width="200" height="400"></p>
