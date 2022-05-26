@@ -72,6 +72,10 @@
 3. apk파일을 다운로드 한뒤, 설치해준다.
 <p> <img src="page_img/m2.jpg" width="200" height="400"></p>
 
+* PC
+1. https://drive.google.com/drive/folders/1OR1tDDwOOTWIwYRjiQkRpPMxiIbgLDZV?usp=sharing 링크로 구글 드라이브에 접속한다
+2. ![image](https://user-images.githubusercontent.com/19148675/170537037-1fd0f9f8-4945-4f3a-ab1e-ececcb3c7197.png)
+
 ## 5. 기타
 
 차후추가.
